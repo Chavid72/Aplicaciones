@@ -1,8 +1,11 @@
 package com.example.quizzapp.ui.theme
 
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import kotlinx.coroutines.delay
 
 class QuestionsInformation (q:List<Question>){
 
@@ -13,14 +16,22 @@ class QuestionsInformation (q:List<Question>){
     var score by mutableStateOf(0)
 
 
-    fun answerQuestion(answerIndex: Int) {
-        if (answerIndex == questions[currentQuestionIndex].correctAnswerIndex) {
+    fun answerQuestion(answerIndex: Int): Boolean {
+        val isCorrect = answerIndex == questions[currentQuestionIndex].correctAnswerIndex
+        if (isCorrect) {
             score++
         }
         currentQuestionIndex++
+
+        return isCorrect // Devolvemos `true` si es correcto, `false` si es incorrecto
     }
 
     fun isGameFinished(): Boolean {
         return currentQuestionIndex >= questions.size
     }
+
+    fun nextQuestion() {
+        currentQuestionIndex++
+    }
+
 }

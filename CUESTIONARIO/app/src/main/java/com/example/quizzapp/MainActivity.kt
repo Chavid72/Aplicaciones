@@ -1,7 +1,9 @@
 package com.example.quizzapp
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
+import android.media.MediaPlayer
 import android.os.Bundle
+import android.text.style.BackgroundColorSpan
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -29,6 +31,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -46,23 +49,45 @@ import androidx.compose.ui.unit.sp
 import com.example.quizzapp.ui.theme.QuestionsInformation
 import com.example.quizzapp.ui.theme.QuizzAppTheme
 import com.example.quizzapp.ui.theme.ReadQuestions
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
+import kotlinx.coroutines.delay
+
 
 class MainActivity : ComponentActivity() {
+    private var mediaPlayer: MediaPlayer? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             QuizzAppTheme {
-                    QuizApp(Modifier.fillMaxSize())
-                }
+                QuizApp(Modifier.fillMaxSize(), playSound = { playSound(it) })
             }
+        }
+    }
+
+    // Reproduce el sonido correspondiente
+    fun playSound(soundResId: Int) {
+        // Libera el MediaPlayer anterior si existe
+        mediaPlayer?.release()
+        // Inicializa un nuevo MediaPlayer con el sonido correspondiente
+        mediaPlayer = MediaPlayer.create(this, soundResId)
+        mediaPlayer?.start()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // Libera el MediaPlayer al cerrar la actividad
+        mediaPlayer?.release()
     }
 }
 
 
 
+
 @Composable
-fun QuizApp(modifier: Modifier=Modifier)
+fun QuizApp(modifier: Modifier=Modifier, playSound: (Int) -> Unit)
 {
     var text = "Anonimo"
     var shouldShowOnboarding by rememberSaveable { mutableStateOf(true) }
@@ -81,7 +106,7 @@ fun QuizApp(modifier: Modifier=Modifier)
             val quest: ReadQuestions = ReadQuestions()
             val questions = quest.questionThem(tematica)
             val viewModel: QuestionsInformation = QuestionsInformation(questions)
-            GameScreen(viewModel,text , tematica, { shouldShowGame = false;})
+            GameScreen(viewModel,text , tematica, { shouldShowGame = false;}, playSound)
         }
 
     }
@@ -207,7 +232,7 @@ fun them(name: String, indice:Int, tematica:Int, funcam:(Int) ->Unit,onContinued
 
 
 @Composable
-fun GameScreen(viewModel: QuestionsInformation, name: String, tematica:Int, onContinuedClicked:() -> Unit,
+fun GameScreen(viewModel: QuestionsInformation, name: String, tematica:Int, onContinuedClicked:() -> Unit, playSound: (Int) -> Unit,
                modifier:Modifier = Modifier) {
 
     if (viewModel.isGameFinished()) {
@@ -216,6 +241,10 @@ fun GameScreen(viewModel: QuestionsInformation, name: String, tematica:Int, onCo
     } else {
         val question = viewModel.questions[viewModel.currentQuestionIndex]
 
+        var timeRemaining by remember { mutableStateOf(10) } // 10 segundos de cuenta atrás
+        var timerColor by remember { mutableStateOf(Color.Black) } // Estado para manejar el color del temporizador
+        var isSelectable by remember { mutableStateOf(true) } // Estado para controlar la selección de respuestas
+
         UserName(name)
 
         Column(
@@ -223,6 +252,7 @@ fun GameScreen(viewModel: QuestionsInformation, name: String, tematica:Int, onCo
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Text(text = "Tiempo restante: $timeRemaining s", fontSize = 18.sp, fontWeight = FontWeight.Bold, color = timerColor)
 
             val tipo = chooseName(tematica)
 
@@ -266,20 +296,77 @@ fun GameScreen(viewModel: QuestionsInformation, name: String, tematica:Int, onCo
 
                 Spacer(modifier = Modifier.padding(all = 10.dp))
 
+                // Variables para manejar el color de los botones
+                var selectedOptionIndex by rememberSaveable { mutableStateOf(-1) }
+                var isCorrect by rememberSaveable { mutableStateOf(false) }
+
+                // Temporizador que se reinicia con cada nueva pregunta
+                LaunchedEffect(viewModel.currentQuestionIndex) {
+                    timeRemaining = 10 // Reinicia el temporizador a 10 segundos
+                    timerColor = Color.Black // Reinicia el color del temporizador
+                    isSelectable = true // NUEVO: Permitir selección al inicio del temporizador
+
+                    while (timeRemaining > 0) {
+                        delay(1000L) // Espera 1 segundo
+                        timeRemaining--
+                    }
+
+                    // Si el tiempo se agota y no hay respuesta, pasa a la siguiente pregunta
+                    if (selectedOptionIndex == -1) {
+                        playSound(R.raw.incorrect_sound) // Sonido de respuesta incorrecta
+                        timerColor = Color.Red // Cambia el color del temporizador a rojo
+                        isSelectable = false // Bloquear selección de respuestas
+                        delay(1000L) // Espera 1 segundo para mostrar el color rojo
+                        timerColor = Color.Black // Vuelve a poner el color normal MaterialTheme.colorScheme.primary
+                        viewModel.nextQuestion() // Avanza a la siguiente pregunta
+                        isSelectable = true // Permitir selección nuevamente
+
+                    }
+                }
+
                 question.options.forEachIndexed { index, option ->
+                    val buttonColor = when {
+                        selectedOptionIndex == index && isCorrect -> Color.Green
+                        selectedOptionIndex == index && !isCorrect -> Color.Red
+                        else -> MaterialTheme.colorScheme.secondary
+                    }
+
+                    LaunchedEffect(selectedOptionIndex) {
+                        delay(500) // 0.5 segundo de retardo
+                        //viewModel.nextQuestion()
+                        selectedOptionIndex = -1 // Reinicia para el próximo botón
+                    }
+
                     ElevatedButton(
-                        onClick = { viewModel.answerQuestion(index)},
+                        onClick = {
+                            if (isSelectable) {
+                                isCorrect = viewModel.answerQuestion(index)
+                                selectedOptionIndex = index
+                                timeRemaining = 0 // Detener el temporizador
+                                // Reproduce el sonido correspondiente
+                                if (isCorrect) {
+
+                                    playSound(R.raw.correct_sound) // Sonido de respuesta correcta
+                                } else {
+                                    playSound(R.raw.incorrect_sound) // Sonido de respuesta incorrecta
+                                }
+                            }
+
+                                  },
+
+
                         colors = ButtonDefaults.buttonColors(
-                            MaterialTheme.colorScheme.secondary,
+                            buttonColor
                         ),
                         modifier = Modifier.fillMaxWidth()
+
                     )
                     {
+
                         Text(text = option,
                             fontWeight = FontWeight.ExtraBold)
 
                     }
-
 
                 }
             }
@@ -287,6 +374,8 @@ fun GameScreen(viewModel: QuestionsInformation, name: String, tematica:Int, onCo
         }
     }
 }
+
+
 
 @Composable
 fun chooseName(tematica: Int): String {
@@ -409,7 +498,7 @@ fun UserName (name: String, modifier: Modifier = Modifier){
 @Composable
 fun GreetingPreview() {
     QuizzAppTheme {
-        QuizApp(Modifier.fillMaxSize())
+        QuizApp(Modifier.fillMaxSize(), playSound = {})
     }
 }
 
@@ -418,7 +507,7 @@ fun GreetingPreview() {
 @Composable
 fun asr () {
     QuizzAppTheme () {
-        QuizApp(Modifier.fillMaxSize())
+        QuizApp(Modifier.fillMaxSize(), playSound = {})
     }
 }
 
