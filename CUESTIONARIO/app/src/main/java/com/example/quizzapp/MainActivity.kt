@@ -89,7 +89,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun QuizApp(modifier: Modifier=Modifier, playSound: (Int) -> Unit)
 {
-    var text = "Anonimo"
+    var text = "Anónimo"
     var shouldShowOnboarding by rememberSaveable { mutableStateOf(true) }
     var shouldShowGame by rememberSaveable { mutableStateOf(false) }
     var tematica by rememberSaveable() { mutableStateOf(0) }
@@ -99,7 +99,7 @@ fun QuizApp(modifier: Modifier=Modifier, playSound: (Int) -> Unit)
             text = FirstScreen(text, {shouldShowOnboarding = false;}
             )
         else if (!shouldShowGame) {
-            ChooseTheme(text, { shouldShowGame = true; }, tematica, {dato -> tematica = dato} )
+            ChooseTheme(text, { shouldShowGame = true; }, {dato -> tematica = dato} )
             println(tematica.toString())
         }
         else {
@@ -175,19 +175,19 @@ fun FirstScreen (name:String, onContinuedClicked:() -> Unit, modifier:Modifier =
 
 
 @Composable
-fun ChooseTheme (name: String, onContinuedClicked:() -> Unit, tematica:Int, funcam:(Int) ->Unit,  modifier: Modifier = Modifier){
+fun ChooseTheme (name: String, onContinuedClicked:() -> Unit, funcam:(Int) ->Unit,  modifier: Modifier = Modifier){
 
     // var tematica by rememberSaveable() { mutableStateOf(4) }
     Column (){
 
         UserName(name)
-        val names = listOf("Videojuegos", "Física", "Cocina", "Zoologia", "Historia", "Cine")
+        val names = listOf("Videojuegos", "Física", "Cocina", "Zoología", "Historia", "Cine")
         var i by  mutableStateOf(0)
         var tematica by rememberSaveable() { mutableStateOf(0) }
 
         Column (modifier = modifier.padding(vertical = 4.dp)){
             for (name in names){
-                them(name,i, tematica, funcam , onContinuedClicked)
+                them(name,i, funcam , onContinuedClicked)
 
                 i = i+1
             }
@@ -201,7 +201,7 @@ fun ChooseTheme (name: String, onContinuedClicked:() -> Unit, tematica:Int, func
 
 
 @Composable
-fun them(name: String, indice:Int, tematica:Int, funcam:(Int) ->Unit,onContinuedClicked:() -> Unit, modifier: Modifier = Modifier){
+fun them(name: String, indice:Int, funcam:(Int) ->Unit,onContinuedClicked:() -> Unit, modifier: Modifier = Modifier){
 
     Spacer(modifier = Modifier.padding(all = 10.dp))
 
@@ -241,8 +241,9 @@ fun GameScreen(viewModel: QuestionsInformation, name: String, tematica:Int, onCo
     } else {
         val question = viewModel.questions[viewModel.currentQuestionIndex]
 
+        var color =  MaterialTheme.colorScheme.secondary
         var timeRemaining by remember { mutableStateOf(10) } // 10 segundos de cuenta atrás
-        var timerColor by remember { mutableStateOf(Color.Black) } // Estado para manejar el color del temporizador
+        var timerColor by remember { mutableStateOf(color) } // Estado para manejar el color del temporizador
         var isSelectable by remember { mutableStateOf(true) } // Estado para controlar la selección de respuestas
 
         UserName(name)
@@ -303,7 +304,7 @@ fun GameScreen(viewModel: QuestionsInformation, name: String, tematica:Int, onCo
                 // Temporizador que se reinicia con cada nueva pregunta
                 LaunchedEffect(viewModel.currentQuestionIndex) {
                     timeRemaining = 10 // Reinicia el temporizador a 10 segundos
-                    timerColor = Color.Black // Reinicia el color del temporizador
+                    timerColor = color // Reinicia el color del temporizador
                     isSelectable = true // NUEVO: Permitir selección al inicio del temporizador
 
                     while (timeRemaining > 0) {
@@ -317,7 +318,7 @@ fun GameScreen(viewModel: QuestionsInformation, name: String, tematica:Int, onCo
                         timerColor = Color.Red // Cambia el color del temporizador a rojo
                         isSelectable = false // Bloquear selección de respuestas
                         delay(1000L) // Espera 1 segundo para mostrar el color rojo
-                        timerColor = Color.Black // Vuelve a poner el color normal MaterialTheme.colorScheme.primary
+                        timerColor = color // Vuelve a poner el color normal MaterialTheme.colorScheme.primary
                         viewModel.nextQuestion() // Avanza a la siguiente pregunta
                         isSelectable = true // Permitir selección nuevamente
 
@@ -468,7 +469,7 @@ fun UserName (name: String, modifier: Modifier = Modifier){
 
             Image(
                 painter = painterResource(id = R.drawable.usuario),
-                contentDescription = "PEPE",
+                contentDescription = "USUARIO",
                 modifier = Modifier
                     .size(50.dp)
                     .border(
@@ -483,7 +484,6 @@ fun UserName (name: String, modifier: Modifier = Modifier){
                 Modifier
                     .padding(all = 25.dp)
                     .fillMaxWidth(),
-                //color = MaterialTheme.colorScheme.tertiary,
                 fontSize = 25.sp,
                 fontWeight = FontWeight.ExtraBold
             )
