@@ -20,6 +20,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -52,6 +54,15 @@ import com.example.quizzapp.ui.theme.ReadQuestions
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import kotlinx.coroutines.delay
+// Imports para boton de opciones
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+//import androidx.compose.material3.Icon.Icons
+//import androidx.compose.material3.icons.filled.MoreVert
+import androidx.compose.runtime.remember
+
 
 
 class MainActivity : ComponentActivity() {
@@ -87,31 +98,42 @@ class MainActivity : ComponentActivity() {
 
 
 @Composable
-fun QuizApp(modifier: Modifier=Modifier, playSound: (Int) -> Unit)
-{
+fun QuizApp(
+    modifier: Modifier = Modifier,
+    playSound: (Int) -> Unit
+) {
     var text = "Anónimo"
     var shouldShowOnboarding by rememberSaveable { mutableStateOf(true) }
     var shouldShowGame by rememberSaveable { mutableStateOf(false) }
-    var tematica by rememberSaveable() { mutableStateOf(0) }
+    var tematica by rememberSaveable { mutableStateOf(0) }
 
-    Surface (modifier){
-        if (shouldShowOnboarding)
-            text = FirstScreen(text, {shouldShowOnboarding = false;}
-            )
-        else if (!shouldShowGame) {
-            ChooseTheme(text, { shouldShowGame = true; }, {dato -> tematica = dato} )
-            println(tematica.toString())
+    Surface(modifier) {
+        when {
+            shouldShowOnboarding -> {
+                text = FirstScreen( // NUEVO: Se pasan todos los parámetros que espera FirstScreen
+                    name = text,
+                    onContinuedClicked = { shouldShowOnboarding = false }, // Cambia de pantalla
+                    modifier = Modifier
+                )
+            }
+            !shouldShowGame -> {
+                ChooseTheme(
+                    name = text,
+                    onContinuedClicked = { shouldShowGame = true },
+                    funcam = { dato -> tematica = dato },
+                    onChangeNameClicked = { shouldShowOnboarding = true } // Navega a FirstScreen
+                )
+            }
+            else -> {
+                val quest: ReadQuestions = ReadQuestions()
+                val questions = quest.questionThem(tematica)
+                val viewModel: QuestionsInformation = QuestionsInformation(questions)
+                GameScreen(viewModel, text, tematica, { shouldShowGame = false }, playSound)
+            }
         }
-        else {
-            val quest: ReadQuestions = ReadQuestions()
-            val questions = quest.questionThem(tematica)
-            val viewModel: QuestionsInformation = QuestionsInformation(questions)
-            GameScreen(viewModel,text , tematica, { shouldShowGame = false;}, playSound)
-        }
-
     }
-
 }
+
 
 
 @Composable
@@ -175,28 +197,56 @@ fun FirstScreen (name:String, onContinuedClicked:() -> Unit, modifier:Modifier =
 
 
 @Composable
-fun ChooseTheme (name: String, onContinuedClicked:() -> Unit, funcam:(Int) ->Unit,  modifier: Modifier = Modifier){
+fun ChooseTheme(
+    name: String,
+    onContinuedClicked: () -> Unit,
+    funcam: (Int) -> Unit,
+    onChangeNameClicked: () -> Unit, // NUEVO: Parámetro para manejar navegación a FirstScreen
+    modifier: Modifier = Modifier
+) {
+    var showMenu by remember { mutableStateOf(false) }
 
-    // var tematica by rememberSaveable() { mutableStateOf(4) }
-    Column (){
-
-        UserName(name)
-        val names = listOf("Videojuegos", "Física", "Cocina", "Zoología", "Historia", "Cine")
-        var i by  mutableStateOf(0)
-        var tematica by rememberSaveable() { mutableStateOf(0) }
-
-        Column (modifier = modifier.padding(vertical = 4.dp)){
-            for (name in names){
-                them(name,i, funcam , onContinuedClicked)
-
-                i = i+1
+    Column {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(MaterialTheme.colorScheme.primary)
+                .padding(16.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            IconButton(onClick = { showMenu = true }) {
+                Icon(Icons.Default.MoreVert, contentDescription = "Opciones")
             }
+
+            DropdownMenu(
+                expanded = showMenu,
+                onDismissRequest = { showMenu = false }
+            ) {
+                DropdownMenuItem(
+                    text = { Text("Cambiar nombre") },
+                    onClick = {
+                        showMenu = false
+                        onChangeNameClicked() // NUEVO: Llama a onChangeNameClicked para navegar a FirstScreen
+                    }
+                )
+            }
+            UserName(name)
         }
 
+        // Lista de temas
+        val names = listOf("Videojuegos", "Física", "Cocina", "Zoología", "Historia", "Cine")
+        var i by mutableStateOf(0)
 
+        Column(modifier = modifier.padding(vertical = 4.dp)) {
+            for (name in names) {
+                them(name, i, funcam, onContinuedClicked)
+                i++
+            }
+        }
     }
-
 }
+
 
 
 
@@ -381,8 +431,10 @@ fun GameScreen(viewModel: QuestionsInformation, name: String, tematica:Int, onCo
 @Composable
 fun chooseName(tematica: Int): String {
     var tema by rememberSaveable() { mutableStateOf("") }
-    // videojuegos fisica cocina zoologia historia cine
 
+
+
+    // videojuegos fisica cocina zoologia historia cine
     if (tematica <1)
         return "VIDEOJUEGOS"
     else if (tematica<2)
