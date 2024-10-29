@@ -318,7 +318,7 @@ fun GameScreen(viewModel: QuestionsInformation, name: String, tematica:Int, onCo
 
             Image(
                 painter = painterResource(id = imagenResId),
-                contentDescription = "PEPE",
+                contentDescription = "ImagenTematica",
                 modifier = Modifier
                     .size(300.dp)
             )

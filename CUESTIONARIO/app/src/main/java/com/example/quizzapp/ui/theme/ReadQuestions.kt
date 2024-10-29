@@ -35,9 +35,66 @@ class ReadQuestions {
             3))
 
     val questionsVideojuegos = listOf(
-        Question("¿videoJuegos? ",
-            listOf("David es feo", "Agus es Puto", "Rodrigo es tonto", "Todas son correctas"),
-            3))
+        Question("¿Cual es el nombre del protagonista de la saga de videojuegos “God of War”?",
+            listOf("Mario", "Odín", "Kratos", "Atreus"),
+            2), // Kratos es la tercera respuesta (índice 2)
+
+        Question("¿Con que género se identifica el videojuego “Elden Ring”?",
+            listOf("Souls-like", "Terror", "Shooter", "Supervivencia"),
+            0), // Souls-like es la primera respuesta (índice 0)
+
+        Question("¿Que videojuego ganó el premio GOTY (Game Of The Year) en el año 2020?",
+            listOf("Ghost of Tsushima", "The last of us II", "Hades", "Animal Crossing: New Horizons"),
+            1), // The last of us II es la segunda respuesta (índice 1)
+
+        Question("¿A quién tenemos que rescatar en la saga de “Super Mario Bros”?",
+            listOf("Daisy", "Isabel", "Peach", "Luigi"),
+            2), // Peach es la tercera respuesta (índice 2)
+
+        Question("¿Que mob dio origen a través de un error al “Creeper” en el videojuego Minecraft?",
+            listOf("Cerdo", "Oveja", "Esqueleto", "Zombie"),
+            0), // Cerdo es la primera respuesta (índice 0)
+
+        Question("¿Cual de los siguientes videojuegos está desarrollado por la empresa “Ubisoft”?",
+            listOf("God of war", "Gang Beast", "Horizon Zero Dawn", "Assassin's creed odyssey"),
+            3), // Assassin's creed odyssey es la cuarta respuesta (índice 3)
+
+        Question("¿Cual de los siguientes videojuegos se trata de un supervivencia?",
+            listOf("Slime Rancher", "Subnautica", "Battlefield", "Rocket league"),
+            1), // Subnautica es la segunda respuesta (índice 1)
+
+        Question("¿Cuales son los personajes principales del videojuego “GTA V”?",
+            listOf("Trevor, Omar y Miguel", "Miguel, Franklin y Ryan", "Trevor, Franklin y Michael", "Mohamed, Vinicius, Pamela"),
+            2), // Trevor, Franklin y Michael es la tercera respuesta (índice 2)
+
+        Question("¿Que juego inició el género de Battle Royale?",
+            listOf("PUBG", "Fortnite", "Apex Legends", "Call of duty: Warzone"),
+            0), // PUBG es la primera respuesta (índice 0)
+
+        Question("¿En que videojuego aparece el actor “Keanu Reeves”?",
+            listOf("Call of duty: Black ops 6", "Quiet Place", "Until Dawn", "Cyberpunk 2077"),
+            3), // Cyberpunk 2077 es la cuarta respuesta (índice 3)
+
+        Question("¿Quien es el protagonista del videojuego Infamous: Second Son?",
+            listOf("Delsin Rowe", "Aiden Pierce", "Harry Potter", "Peter Parker"),
+            0), // Delsin Rowe es la primera respuesta (índice 0)
+
+        Question("¿Que caracteriza a la saga de Watch Dogs?",
+            listOf("Mundo abierto", "Hackeo", "Conducción", "Simulación"),
+            1), // Hackeo es la segunda respuesta (índice 1)
+
+        Question("¿Cual es la orientación sexual de Ellie en la saga The last of us?",
+            listOf("Bisexual", "Onyankopon", "Lesbiana", "Heterosexual"),
+            2), // Lesbiana es la tercera respuesta (índice 2)
+
+        Question("¿Que monetización utiliza la saga de “World of Warcraft”?",
+            listOf("Free to play", "Anuncios", "Pase de batalla", "Suscripción"),
+            3), // Suscripción es la cuarta respuesta (índice 3)
+
+        Question("¿Cual de los siguientes videojuegos es un exclusivo de PlayStation?",
+            listOf("Bloodborne", "Forza Horizon", "Remnant From The Ashes", "Preguntados"),
+            0) // Bloodborne es la primera respuesta (índice 0)
+    )
 
     val questionsFisica = listOf(
         Question("¿Cuál es el principio fundamental que establece que no se pueden conocer simultáneamente la posición y el momento de una partícula?",
@@ -166,7 +223,7 @@ class ReadQuestions {
 
         Question("¿Qué adaptación permite a los pingüinos nadar eficientemente?",
             listOf("Alas largas", "Pies palmeados", "Piel escamosa", "Plumas impermeables"),
-            1),
+            3),
 
         Question("¿Cuál es el principal órgano de excreción en los artrópodos?",
             listOf("Riñones", "Malpighi", "Hígado", "Piel"),
