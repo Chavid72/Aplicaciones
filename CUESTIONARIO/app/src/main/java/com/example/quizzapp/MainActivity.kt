@@ -110,6 +110,7 @@ fun QuizApp(
     Surface(modifier) {
         when {
             shouldShowOnboarding -> {
+                text = "Anónimo"
                 text = FirstScreen( // NUEVO: Se pasan todos los parámetros que espera FirstScreen
                     name = text,
                     onContinuedClicked = { shouldShowOnboarding = false }, // Cambia de pantalla
@@ -121,14 +122,15 @@ fun QuizApp(
                     name = text,
                     onContinuedClicked = { shouldShowGame = true },
                     funcam = { dato -> tematica = dato },
-                    onChangeNameClicked = { shouldShowOnboarding = true } // Navega a FirstScreen
-                )
+                    onChangeNameClicked = { shouldShowOnboarding = true }, // Navega a FirstScreen
+                    shouldShowGame)
             }
             else -> {
                 val quest: ReadQuestions = ReadQuestions()
                 val questions = quest.questionThem(tematica)
                 val viewModel: QuestionsInformation = QuestionsInformation(questions)
-                GameScreen(viewModel, text, tematica, { shouldShowGame = false }, playSound)
+                GameScreen(viewModel, text, tematica, { shouldShowGame = false }, playSound,
+                    onChangeNameClicked = { shouldShowOnboarding = true } , shouldShowGame)
             }
         }
     }
@@ -202,38 +204,11 @@ fun ChooseTheme(
     onContinuedClicked: () -> Unit,
     funcam: (Int) -> Unit,
     onChangeNameClicked: () -> Unit, // NUEVO: Parámetro para manejar navegación a FirstScreen
+    shouldShowGame: Boolean,
     modifier: Modifier = Modifier
 ) {
-    var showMenu by remember { mutableStateOf(false) }
-
     Column {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(MaterialTheme.colorScheme.primary)
-                .padding(16.dp),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            IconButton(onClick = { showMenu = true }) {
-                Icon(Icons.Default.MoreVert, contentDescription = "Opciones")
-            }
-
-            DropdownMenu(
-                expanded = showMenu,
-                onDismissRequest = { showMenu = false }
-            ) {
-                DropdownMenuItem(
-                    text = { Text("Cambiar nombre") },
-                    onClick = {
-                        showMenu = false
-                        onChangeNameClicked() // NUEVO: Llama a onChangeNameClicked para navegar a FirstScreen
-                    }
-                )
-            }
-            UserName(name)
-        }
-
+        UserName(name, onChangeNameClicked, onContinuedClicked, shouldShowGame)
         // Lista de temas
         val names = listOf("Videojuegos", "Física", "Cocina", "Zoología", "Historia", "Cine")
         var i by mutableStateOf(0)
@@ -246,6 +221,8 @@ fun ChooseTheme(
         }
     }
 }
+
+
 
 
 
@@ -282,11 +259,14 @@ fun them(name: String, indice:Int, funcam:(Int) ->Unit,onContinuedClicked:() -> 
 
 
 @Composable
-fun GameScreen(viewModel: QuestionsInformation, name: String, tematica:Int, onContinuedClicked:() -> Unit, playSound: (Int) -> Unit,
+fun GameScreen(viewModel: QuestionsInformation, name: String, tematica:Int,
+               onContinuedClicked:() -> Unit, playSound: (Int) -> Unit,
+               onChangeNameClicked:()->Unit,
+               shouldShowGame:Boolean,
                modifier:Modifier = Modifier) {
 
     if (viewModel.isGameFinished()) {
-        ResultScreen(viewModel.score, viewModel.questions.size, name,onContinuedClicked)
+        ResultScreen(viewModel.score, viewModel.questions.size, name,onContinuedClicked, onChangeNameClicked,shouldShowGame)
 
     } else {
         val question = viewModel.questions[viewModel.currentQuestionIndex]
@@ -296,7 +276,7 @@ fun GameScreen(viewModel: QuestionsInformation, name: String, tematica:Int, onCo
         var timerColor by remember { mutableStateOf(color) } // Estado para manejar el color del temporizador
         var isSelectable by remember { mutableStateOf(true) } // Estado para controlar la selección de respuestas
 
-        UserName(name)
+        UserName(name, onChangeNameClicked, onContinuedClicked, shouldShowGame)
 
         Column(
             modifier.fillMaxSize(),
@@ -453,10 +433,13 @@ fun chooseName(tematica: Int): String {
 
 
 @Composable
-fun ResultScreen(score: Int, totalQuestions: Int ,name:String,onContinuedClicked:() -> Unit
-                 , modifier: Modifier = Modifier) {
+fun ResultScreen(score: Int, totalQuestions: Int ,name:String,
+                 onContinuedClicked:() -> Unit,
+                 onChangeNameClicked:()->Unit,
+                 shouldShowGame: Boolean,
+                 modifier: Modifier = Modifier) {
 
-    UserName(name)
+    UserName(name, onChangeNameClicked, onContinuedClicked, shouldShowGame)
 
     Column (modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -513,11 +496,42 @@ fun ResultScreen(score: Int, totalQuestions: Int ,name:String,onContinuedClicked
 
 
 @Composable
-fun UserName (name: String, modifier: Modifier = Modifier){
-    Column {
-        Row(Modifier.background(MaterialTheme.colorScheme.primary)) {
+fun UserName (name: String,onChangeNameClicked:()->Unit,
+              onContinuedClicked: () -> Unit,
+              shouldShowGame: Boolean,
+              modifier: Modifier = Modifier) {
 
-            Spacer(modifier = Modifier.padding(all = 10.dp))
+
+    var showMenu by remember { mutableStateOf(false) }
+
+    Column {
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(MaterialTheme.colorScheme.primary),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+
+            IconButton(onClick = { showMenu = true }) {
+                Icon(Icons.Default.MoreVert, contentDescription = "Opciones")
+            }
+
+            DropdownMenu(
+                expanded = showMenu,
+                onDismissRequest = { showMenu = false }
+            ) {
+                DropdownMenuItem(
+                    text = { Text("Cambiar nombre") },
+                    onClick = {
+                        showMenu = false
+                        onChangeNameClicked() // NUEVO: Llama a onChangeNameClicked para navegar a FirstScreen
+                        if (shouldShowGame)
+                            onContinuedClicked()
+                    }
+                )
+            }
 
             Image(
                 painter = painterResource(id = R.drawable.usuario),
@@ -539,12 +553,9 @@ fun UserName (name: String, modifier: Modifier = Modifier){
                 fontSize = 25.sp,
                 fontWeight = FontWeight.ExtraBold
             )
-
-
         }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
@@ -567,6 +578,6 @@ fun asr () {
 @Composable
 fun asr1 () {
     QuizzAppTheme () {
-        ResultScreen(2,5,"Pepe",{var r = false;})
+        ResultScreen(2,5,"Pepe",{var r = false;},{var r = false;}, false)
     }
 }
