@@ -177,6 +177,19 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
         }
       });
       limpiarSeleccion();
+      verificarVictoria();
+    }
+  }
+
+  void verificarVictoria() {
+    if (palabrasEncontradas.length == palabras.length) {
+      _timer.cancel();
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => PantallaVictoria(tiempo: _formatTime(_seconds)),
+        ),
+      );
     }
   }
 
@@ -315,3 +328,55 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
     );
   }
 }
+
+class PantallaVictoria extends StatelessWidget {
+  final String tiempo;
+
+  PantallaVictoria({required this.tiempo});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('¡Has ganado!'),
+        backgroundColor: Colors.green, // Reemplazado 'primary' por 'backgroundColor'
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '¡Felicidades!',
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+                color: Colors.green,
+              ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              'Tiempo: $tiempo',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Volver al Juego'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green, // Reemplazado 'primary' por 'backgroundColor'
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                textStyle: TextStyle(fontSize: 18),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
