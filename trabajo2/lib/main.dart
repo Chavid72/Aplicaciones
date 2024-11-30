@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 import 'dart:math';
 
 void main() => runApp(SopaDeLetrasApp());
@@ -30,49 +31,59 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
   final int gridSize = 10;
   List<List<String>> sopa = [];
   Random random = Random();
-
-  // Lista para manejar la selección de celdas
   List<List<bool>> seleccionadas = [];
   List<String> letrasSeleccionadas = [];
   List<String> palabrasEncontradas = [];
   List<List<int>> celdasEncontradas = [];
   String mensaje = '';
 
+  // Variables para el cronómetro
+  late Timer _timer;
+  int _seconds = 0;
+
   @override
   void initState() {
     super.initState();
-
-    // Seleccionar 4 palabras aleatorias de todasLasPalabras
     palabras = seleccionarPalabrasAleatorias(4, todasLasPalabras);
-
-    // Generar la sopa de letras con las palabras seleccionadas
     sopa = generarSopaDeLetras(gridSize, palabras);
+    seleccionadas = List.generate(gridSize, (_) => List.filled(gridSize, false));
+    _startTimer();
+  }
 
-    // Inicializar las celdas seleccionadas
-    seleccionadas =
-        List.generate(gridSize, (_) => List.filled(gridSize, false));
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
+  void _startTimer() {
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      setState(() {
+        _seconds++;
+      });
+    });
+  }
+
+  String _formatTime(int seconds) {
+    final int minutes = seconds ~/ 60;
+    final int remainingSeconds = seconds % 60;
+    return '${minutes.toString().padLeft(2, '0')}:${remainingSeconds.toString().padLeft(2, '0')}';
   }
 
   List<String> seleccionarPalabrasAleatorias(int cantidad, List<String> lista) {
     List<String> seleccionadas = [];
-    Random random = Random();
-
     while (seleccionadas.length < cantidad) {
       String palabra = lista[random.nextInt(lista.length)];
       if (!seleccionadas.contains(palabra)) {
         seleccionadas.add(palabra);
       }
     }
-
     return seleccionadas;
   }
 
-
-  // Generar la sopa de letras con palabras aleatorias
   List<List<String>> generarSopaDeLetras(int size, List<String> palabras) {
     List<List<String>> grid = List.generate(
         size, (_) => List.filled(size, '', growable: false));
-
     for (String palabra in palabras) {
       bool colocada = false;
       while (!colocada) {
@@ -85,12 +96,10 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
         }
       }
     }
-
-    // Llenar el resto con letras aleatorias
     for (int i = 0; i < size; i++) {
       for (int j = 0; j < size; j++) {
         if (grid[i][j] == '') {
-          grid[i][j] = String.fromCharCode(65 + random.nextInt(26)); // A-Z
+          grid[i][j] = String.fromCharCode(65 + random.nextInt(26));
         }
       }
     }
@@ -134,39 +143,31 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
       } else {
         letrasSeleccionadas.remove(sopa[row][col]);
       }
-
       verificarPalabraSeleccionada();
     });
   }
+
   void reiniciarJuego() {
     setState(() {
-      // Seleccionar nuevas palabras aleatorias
       palabras = seleccionarPalabrasAleatorias(4, todasLasPalabras);
-
-      // Generar nueva sopa
       sopa = generarSopaDeLetras(gridSize, palabras);
-
-      // Reiniciar estado de las celdas seleccionadas
       seleccionadas = List.generate(gridSize, (_) => List.filled(gridSize, false));
-
-      // Limpiar palabras encontradas y mensaje
       palabrasEncontradas.clear();
       celdasEncontradas.clear();
       mensaje = '';
+      _seconds = 0;
+      _timer.cancel();
+      _startTimer();
     });
   }
 
-  // Verificar si las letras seleccionadas forman una palabra válida
   void verificarPalabraSeleccionada() {
     String palabraFormada = letrasSeleccionadas.join();
-
     if (palabras.contains(palabraFormada) &&
         !palabrasEncontradas.contains(palabraFormada)) {
       setState(() {
         palabrasEncontradas.add(palabraFormada);
         mensaje = '¡Encontraste la palabra "$palabraFormada"!';
-
-        // Guardar las coordenadas de las celdas encontradas
         for (int r = 0; r < gridSize; r++) {
           for (int c = 0; c < gridSize; c++) {
             if (seleccionadas[r][c]) {
@@ -175,12 +176,10 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
           }
         }
       });
-
       limpiarSeleccion();
     }
   }
 
-  // Limpiar la selección
   void limpiarSeleccion() {
     setState(() {
       seleccionadas =
@@ -193,10 +192,11 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('🌟 Find All 🌟',
+        title: Text(
+          '🌟 Find All 🌟',
           style: TextStyle(
             fontFamily: 'ComicsSans',
-                fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.bold,
           ),
         ),
         centerTitle: true,
@@ -204,11 +204,20 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
-          // Calcular el tamaño de la celda basado en el ancho disponible
           double cellSize = constraints.maxWidth / gridSize;
-
           return Column(
             children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Text(
+                  'Tiempo: ${_formatTime(_seconds)}',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.deepPurple,
+                  ),
+                ),
+              ),
               Expanded(
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -220,10 +229,8 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
                   itemBuilder: (context, index) {
                     int row = index ~/ gridSize;
                     int col = index % gridSize;
-
                     bool esParteDePalabraEncontrada = celdasEncontradas.any(
                             (celda) => celda[0] == row && celda[1] == col);
-
                     return GestureDetector(
                       onTap: () => seleccionarCelda(row, col),
                       child: AnimatedContainer(
@@ -258,8 +265,6 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
                         ),
                       ),
                     );
-
-
                   },
                 ),
               ),
@@ -267,12 +272,13 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   mensaje,
-                  style: TextStyle(fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.red),
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.red,
+                  ),
                 ),
               ),
-              // Mostrar la lista de palabras a encontrar
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Wrap(
@@ -296,18 +302,16 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
                   }).toList(),
                 ),
               ),
-
             ],
           );
         },
       ),
-
-     floatingActionButton: FloatingActionButton(
-    onPressed: reiniciarJuego,
-    backgroundColor: Colors.purple[100],
-    child: Icon(Icons.refresh, size: 30, color: Colors.deepPurple),
-    tooltip: 'Reiniciar Juego',
-     ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: reiniciarJuego,
+        backgroundColor: Colors.purple[100],
+        child: Icon(Icons.refresh, size: 30, color: Colors.deepPurple),
+        tooltip: 'Reiniciar Juego',
+      ),
     );
   }
 }
