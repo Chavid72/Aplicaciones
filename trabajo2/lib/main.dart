@@ -10,7 +10,7 @@ class SopaDeLetrasApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Sopa de Letras',
+      title: 'Find all: word search',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: SopaDeLetras(),
     );
@@ -169,7 +169,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
         !palabrasEncontradas.contains(palabraFormada)) {
       setState(() {
         palabrasEncontradas.add(palabraFormada);
-        mensaje = '¡Encontraste la palabra "$palabraFormada"!';
+        mensaje = '¡You found the word "$palabraFormada"!';
         for (int r = 0; r < gridSize; r++) {
           for (int c = 0; c < gridSize; c++) {
             if (seleccionadas[r][c]) {
@@ -396,7 +396,7 @@ class _PantallaVictoriaState extends State<PantallaVictoria> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('¡Has ganado!'),
+        title: Text('¡You Win!'),
         backgroundColor: Colors.green,
       ),
       body: Center(
@@ -404,7 +404,7 @@ class _PantallaVictoriaState extends State<PantallaVictoria> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              '¡Felicidades!',
+              '¡Congratulations!',
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
@@ -413,7 +413,7 @@ class _PantallaVictoriaState extends State<PantallaVictoria> {
             ),
             SizedBox(height: 20),
             Text(
-              'Tiempo: ${widget.tiempo}',
+              'Time: ${widget.tiempo}',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w500,
@@ -421,7 +421,7 @@ class _PantallaVictoriaState extends State<PantallaVictoria> {
             ),
             SizedBox(height: 20),
             Text(
-              '🏆 Ranking de Mejores Tiempos 🏆',
+              '🏆 Best Times Ranking 🏆',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -442,7 +442,7 @@ class _PantallaVictoriaState extends State<PantallaVictoria> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text('Volver al Juego'),
+              child: Text('Back to game'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
