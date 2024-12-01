@@ -1,3 +1,5 @@
+import 'package:shared_preferences/shared_preferences.dart';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:math';
@@ -329,17 +331,63 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
   }
 }
 
-class PantallaVictoria extends StatelessWidget {
+class PantallaVictoria extends StatefulWidget {
   final String tiempo;
 
   PantallaVictoria({required this.tiempo});
+
+  @override
+  _PantallaVictoriaState createState() => _PantallaVictoriaState();
+}
+
+class _PantallaVictoriaState extends State<PantallaVictoria> {
+  List<int> ranking = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _guardarTiempo();
+  }
+
+  Future<void> _guardarTiempo() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    // Convertir el tiempo de formato "mm:ss" a segundos
+    List<String> partes = widget.tiempo.split(':');
+    int tiempoEnSegundos = int.parse(partes[0]) * 60 + int.parse(partes[1]);
+
+    // Obtener la lista actual de tiempos guardados
+    List<String> tiemposGuardados =
+        prefs.getStringList('ranking') ?? []; // Recupera o lista vacía
+
+    // Agregar el nuevo tiempo y ordenarlo
+    tiemposGuardados.add(tiempoEnSegundos.toString());
+    tiemposGuardados.sort((a, b) => int.parse(a).compareTo(int.parse(b)));
+
+    // Guardar solo los 3 mejores tiempos
+    if (tiemposGuardados.length > 3) {
+      tiemposGuardados = tiemposGuardados.sublist(0, 3);
+    }
+
+    await prefs.setStringList('ranking', tiemposGuardados);
+
+    // Actualizar la lista de tiempos en la UI
+    setState(() {
+      ranking = tiemposGuardados.map((e) => int.parse(e)).toList();
+    });
+  }
+
+  String _formatTime(int seconds) {
+    final int minutes = seconds ~/ 60;
+    final int remainingSeconds = seconds % 60;
+    return '${minutes.toString().padLeft(2, '0')}:${remainingSeconds.toString().padLeft(2, '0')}';
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('¡Has ganado!'),
-        backgroundColor: Colors.green, // Reemplazado 'primary' por 'backgroundColor'
+        backgroundColor: Colors.green,
       ),
       body: Center(
         child: Column(
@@ -355,12 +403,30 @@ class PantallaVictoria extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              'Tiempo: $tiempo',
+              'Tiempo: ${widget.tiempo}',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w500,
               ),
             ),
+            SizedBox(height: 20),
+            Text(
+              '🏆 Ranking de Mejores Tiempos 🏆',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
+            ),
+            SizedBox(height: 10),
+            for (int i = 0; i < ranking.length; i++)
+              Text(
+                '${i + 1}. ${_formatTime(ranking[i])}',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
@@ -368,7 +434,7 @@ class PantallaVictoria extends StatelessWidget {
               },
               child: Text('Volver al Juego'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green, // Reemplazado 'primary' por 'backgroundColor'
+                backgroundColor: Colors.green,
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 textStyle: TextStyle(fontSize: 18),
               ),
@@ -379,4 +445,3 @@ class PantallaVictoria extends StatelessWidget {
     );
   }
 }
-
