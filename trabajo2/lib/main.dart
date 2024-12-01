@@ -346,36 +346,46 @@ class _PantallaVictoriaState extends State<PantallaVictoria> {
   @override
   void initState() {
     super.initState();
-    _guardarTiempo();
+    _cargarRanking(); // Cargar el ranking al iniciar
+    _guardarTiempo(); // Guardar el nuevo tiempo
   }
 
+  // Cargar el ranking guardado desde SharedPreferences
+  Future<void> _cargarRanking() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    List<String> tiemposGuardados = prefs.getStringList('ranking') ?? [];
+    setState(() {
+      ranking = tiemposGuardados.map((e) => int.parse(e)).toList();
+    });
+  }
+
+  // Guardar el nuevo tiempo en el ranking
   Future<void> _guardarTiempo() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    // Convertir el tiempo de formato "mm:ss" a segundos
+
+    // Convertir el tiempo de "mm:ss" a segundos
     List<String> partes = widget.tiempo.split(':');
     int tiempoEnSegundos = int.parse(partes[0]) * 60 + int.parse(partes[1]);
 
-    // Obtener la lista actual de tiempos guardados
-    List<String> tiemposGuardados =
-        prefs.getStringList('ranking') ?? []; // Recupera o lista vacía
-
-    // Agregar el nuevo tiempo y ordenarlo
+    // Agregar el nuevo tiempo y ordenar
+    List<String> tiemposGuardados = prefs.getStringList('ranking') ?? [];
     tiemposGuardados.add(tiempoEnSegundos.toString());
     tiemposGuardados.sort((a, b) => int.parse(a).compareTo(int.parse(b)));
 
-    // Guardar solo los 3 mejores tiempos
+    // Mantener solo los 3 mejores tiempos
     if (tiemposGuardados.length > 3) {
       tiemposGuardados = tiemposGuardados.sublist(0, 3);
     }
 
     await prefs.setStringList('ranking', tiemposGuardados);
 
-    // Actualizar la lista de tiempos en la UI
+    // Actualizar el ranking en la interfaz
     setState(() {
       ranking = tiemposGuardados.map((e) => int.parse(e)).toList();
     });
   }
 
+  // Formato para mostrar los tiempos
   String _formatTime(int seconds) {
     final int minutes = seconds ~/ 60;
     final int remainingSeconds = seconds % 60;
