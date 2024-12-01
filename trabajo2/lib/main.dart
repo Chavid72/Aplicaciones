@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
-
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'dart:async';
 import 'dart:math';
 
@@ -10,7 +10,7 @@ class SopaDeLetrasApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Find all: word search',
+      title: 'Sopa de Letras',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: SopaDeLetras(),
     );
@@ -43,9 +43,13 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
   late Timer _timer;
   int _seconds = 0;
 
+  // Controlador para reproducir audios
+  //AudioPlayer _audioPlayer = AudioPlayer();
+  late AudioPlayer _audioPlayer;
   @override
   void initState() {
     super.initState();
+    _audioPlayer = AudioPlayer(); // NUEVO: Inicializamos el reproductor de audio.
     palabras = seleccionarPalabrasAleatorias(4, todasLasPalabras);
     sopa = generarSopaDeLetras(gridSize, palabras);
     seleccionadas = List.generate(gridSize, (_) => List.filled(gridSize, false));
@@ -55,6 +59,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
   @override
   void dispose() {
     _timer.cancel();
+    _audioPlayer.dispose(); // Liberar recursos del audio
     super.dispose();
   }
 
@@ -142,11 +147,21 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
       seleccionadas[row][col] = !seleccionadas[row][col];
       if (seleccionadas[row][col]) {
         letrasSeleccionadas.add(sopa[row][col]);
+        _reproducirAudio('assets/audio/select.mp3'); // Reproduce select.mp3
       } else {
         letrasSeleccionadas.remove(sopa[row][col]);
+        _reproducirAudio('assets/audio/deselect.mp3'); // Reproduce deselect.mp3
       }
       verificarPalabraSeleccionada();
     });
+  }
+
+  Future<void> _reproducirAudio(String audioPath) async {
+    try {
+      await _audioPlayer.play(AssetSource(audioPath)); // Reproduce el audio
+    } catch (e) {
+      print('Error al reproducir el audio: $e');
+    }
   }
 
   void reiniciarJuego() {
@@ -169,7 +184,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
         !palabrasEncontradas.contains(palabraFormada)) {
       setState(() {
         palabrasEncontradas.add(palabraFormada);
-        mensaje = '¡You found the word "$palabraFormada"!';
+        mensaje = '¡Encontraste la palabra "$palabraFormada"!';
         for (int r = 0; r < gridSize; r++) {
           for (int c = 0; c < gridSize; c++) {
             if (seleccionadas[r][c]) {
@@ -180,6 +195,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
       });
       limpiarSeleccion();
       verificarVictoria();
+      _reproducirAudio('audio/correct.mp3');
     }
   }
 
