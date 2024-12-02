@@ -7,6 +7,10 @@ import 'main.dart';
 import 'pantallaVictoria.dart';
 
 class SopaDeLetras extends StatefulWidget {
+  final bool reiniciar; // Nuevo argumento opcional
+
+  SopaDeLetras({this.reiniciar = false}); // Constructor con valor predeterminado
+
   @override
   _SopaDeLetrasState createState() => _SopaDeLetrasState();
 }
@@ -29,7 +33,8 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
   String mensaje = '';
 
   // Variables para el cronómetro
-  late Timer _timer;
+  //late Timer _timer;
+  Timer? _timer;
   int _seconds = 0;
 
   // Controlador para reproducir audios
@@ -38,6 +43,11 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
   @override
   void initState() {
     super.initState();
+    if (widget.reiniciar) {
+      reiniciarJuego();
+    } else {
+      _startTimer();
+    }
     _audioPlayer = AudioPlayer(); // NUEVO: Inicializamos el reproductor de audio.
     palabras = seleccionarPalabrasAleatorias(4, todasLasPalabras);
     sopa = generarSopaDeLetras(gridSize, palabras);
@@ -47,12 +57,13 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
 
   @override
   void dispose() {
-    _timer.cancel();
-    _audioPlayer.dispose(); // Liberar recursos del audio
+    _timer?.cancel();
+    _audioPlayer.dispose();
     super.dispose();
   }
 
   void _startTimer() {
+    _timer?.cancel(); // Cancela cualquier Timer previo
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
         _seconds++;
@@ -162,8 +173,9 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
       celdasEncontradas.clear();
       mensaje = '';
       _seconds = 0;
-      _timer.cancel();
-      _startTimer();
+
+      _timer?.cancel(); // Cancela el Timer actual antes de reiniciar
+      _startTimer(); // Reinicia el cronómetro
     });
   }
 
@@ -190,7 +202,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
 
   void verificarVictoria() {
     if (palabrasEncontradas.length == palabras.length) {
-      _timer.cancel();
+      _timer?.cancel();
       Navigator.push(
         context,
         MaterialPageRoute(

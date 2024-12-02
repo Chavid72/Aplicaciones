@@ -1,6 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:trabajo2/sopaLetras.dart';
 import 'dart:async';
 import 'dart:math';
 import 'main.dart';
@@ -115,7 +116,12 @@ class _PantallaVictoriaState extends State<PantallaVictoria> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SopaDeLetras(reiniciar: true), // Pasa reiniciar como true
+                  ),
+                );
               },
               child: Text('Back to game'),
               style: ElevatedButton.styleFrom(
