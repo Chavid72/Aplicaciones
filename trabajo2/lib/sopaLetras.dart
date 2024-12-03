@@ -17,10 +17,10 @@ class SopaDeLetras extends StatefulWidget {
 
 class _SopaDeLetrasState extends State<SopaDeLetras> {
   final List<String> todasLasPalabras = [
-    'FLUTTER', 'DART', 'WIDGET', 'STATE', 'BUILD',
-    'ANDROID', 'KOTLIN', 'SWIFT', 'JAVA', 'IOS',
-    'LAYOUT', 'DEBUG', 'REFACTOR', 'NATIVE', 'CROSS',
-    'PLATFORM', 'CODE', 'DEVELOPER', 'HOT', 'RELOAD'
+    'PLAYER', 'GAMEPAD', 'CONSOLE', 'JOYSTICK', 'SANDBOX',
+    'BOSS', 'RESPAWN', 'LEVEL', 'AVATAR', 'NOOB',
+    'RPG', 'SHOOTER', 'SKIN', 'HEALTH', 'SERVER',
+    'PIXEL', 'LOOT', 'DAMAGE', 'GAMER', 'KILL'
   ];
   late List<String> palabras;
   final int gridSize = 10;
@@ -251,6 +251,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
                 ),
               ),
               Expanded(
+                flex: 6, // La cuadrícula ocupa la mayor parte del espacio disponible
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: gridSize,
@@ -300,40 +301,39 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
                   },
                 ),
               ),
+              SizedBox(height: 16), // Añade un espacio fijo entre la cuadrícula y las palabras
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
-                  mensaje,
+                  'Words to Find:',
                   style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.red,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Wrap(
-                  spacing: 10,
-                  runSpacing: 10,
-                  children: palabras.map((palabra) {
-                    bool encontrada = palabrasEncontradas.contains(palabra);
-                    return Chip(
-                      label: Text(
-                        palabra,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: encontrada ? Colors.white : Colors.black,
-                        ),
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: palabras.map((palabra) {
+                  bool encontrada = palabrasEncontradas.contains(palabra);
+                  return Chip(
+                    label: Text(
+                      palabra,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: encontrada ? Colors.white : Colors.black,
                       ),
-                      backgroundColor: encontrada ? Colors.green : Colors.white,
-                      elevation: 4,
-                      shadowColor: Colors.black,
-                    );
-                  }).toList(),
-                ),
+                    ),
+                    backgroundColor: encontrada ? Colors.green : Colors.white,
+                    elevation: 4,
+                    shadowColor: Colors.black,
+                  );
+                }).toList(),
               ),
+              Spacer(flex: 1), // Añade un poco de espacio vacío en la parte inferior
             ],
           );
         },
