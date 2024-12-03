@@ -322,7 +322,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    //color: Colors.black,
                   ),
                 ),
               ),
