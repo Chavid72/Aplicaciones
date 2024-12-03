@@ -5,6 +5,8 @@ import 'package:trabajo2/sopaLetras.dart';
 import 'dart:async';
 import 'dart:math';
 import 'main.dart';
+import 'ajustes.dart';
+
 
 
 class PantallaVictoria extends StatefulWidget {
@@ -72,9 +74,19 @@ class _PantallaVictoriaState extends State<PantallaVictoria> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.settings), // Icono de ajustes
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PantallaAjustes()), // Navega a la pantalla de ajustes
+            );
+          },
+        ),
         title: Text('¡You Win!'),
         backgroundColor: Colors.green,
       ),
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

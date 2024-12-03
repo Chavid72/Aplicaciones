@@ -5,6 +5,8 @@ import 'dart:async';
 import 'dart:math';
 import 'main.dart';
 import 'pantallaVictoria.dart';
+import 'ajustes.dart';
+
 
 class SopaDeLetras extends StatefulWidget {
   final bool reiniciar; // Nuevo argumento opcional
@@ -48,7 +50,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
     } else {
       _startTimer();
     }
-    _audioPlayer = AudioPlayer(); // NUEVO: Inicializamos el reproductor de audio.
+    _audioPlayer = AudioPlayer(); // Inicializamos el reproductor de audio.
     palabras = seleccionarPalabrasAleatorias(4, todasLasPalabras);
     sopa = generarSopaDeLetras(gridSize, palabras);
     seleccionadas = List.generate(gridSize, (_) => List.filled(gridSize, false));
@@ -224,6 +226,15 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.settings), // Icono de ajustes
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PantallaAjustes()), // Navega a la pantalla de ajustes
+            );
+          },
+        ),
         title: Text(
           '🌟 Find All 🌟',
           style: TextStyle(
@@ -234,6 +245,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
         centerTitle: true,
         backgroundColor: Colors.purpleAccent[90],
       ),
+
       body: LayoutBuilder(
         builder: (context, constraints) {
           double cellSize = constraints.maxWidth / gridSize;
