@@ -6,12 +6,13 @@ import 'dart:math';
 import 'main.dart';
 import 'pantallaVictoria.dart';
 import 'ajustes.dart';
-
+import 'theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class SopaDeLetras extends StatefulWidget {
-  final bool reiniciar; // Nuevo argumento opcional
+  final bool reiniciar;
 
-  SopaDeLetras({this.reiniciar = false}); // Constructor con valor predeterminado
+  SopaDeLetras({this.reiniciar = false});
 
   @override
   _SopaDeLetrasState createState() => _SopaDeLetrasState();
@@ -33,29 +34,39 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
   List<String> palabrasEncontradas = [];
   List<List<int>> celdasEncontradas = [];
   String mensaje = '';
-
-  // Variables para el cronómetro
-  //late Timer _timer;
   Timer? _timer;
   int _seconds = 0;
-
-  // Controlador para reproducir audios
-  //AudioPlayer _audioPlayer = AudioPlayer();
   late AudioPlayer _audioPlayer;
+  int nivelActual = 4; // Guarda el nivel actual para detectar cambios
+
   @override
   void initState() {
     super.initState();
-    if (widget.reiniciar) {
-      reiniciarJuego();
-    } else {
-      _startTimer();
-    }
-    _audioPlayer = AudioPlayer(); // Inicializamos el reproductor de audio.
-    palabras = seleccionarPalabrasAleatorias(4, todasLasPalabras);
+    _audioPlayer = AudioPlayer();
+    _startTimer();
+
+    final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
+    nivelActual = themeProvider.nivel;
+
+    palabras = seleccionarPalabrasAleatorias(nivelActual, todasLasPalabras);
     sopa = generarSopaDeLetras(gridSize, palabras);
     seleccionadas = List.generate(gridSize, (_) => List.filled(gridSize, false));
     _startTimer();
   }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    final themeProvider = Provider.of<ThemeProvider>(context, listen: true);
+    final nuevoNivel = themeProvider.nivel;
+
+    if (nuevoNivel != nivelActual) {
+      nivelActual = nuevoNivel;
+      reiniciarJuego();  // Esto ya reinicia el temporizador y el estado del juego
+    }
+  }
+
 
   @override
   void dispose() {
@@ -65,7 +76,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
   }
 
   void _startTimer() {
-    _timer?.cancel(); // Cancela cualquier Timer previo
+    _timer?.cancel();
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
         _seconds++;
@@ -79,20 +90,14 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
     return '${minutes.toString().padLeft(2, '0')}:${remainingSeconds.toString().padLeft(2, '0')}';
   }
 
-  List<String> seleccionarPalabrasAleatorias(int cantidad, List<String> lista) {
-    List<String> seleccionadas = [];
-    while (seleccionadas.length < cantidad) {
-      String palabra = lista[random.nextInt(lista.length)];
-      if (!seleccionadas.contains(palabra)) {
-        seleccionadas.add(palabra);
-      }
-    }
-    return seleccionadas;
+  List<String> seleccionarPalabrasAleatorias(int nivel, List<String> todasLasPalabras) {
+    final limite = nivel.clamp(1, todasLasPalabras.length);
+    todasLasPalabras.shuffle();
+    return todasLasPalabras.take(limite).toList();
   }
 
   List<List<String>> generarSopaDeLetras(int size, List<String> palabras) {
-    List<List<String>> grid = List.generate(
-        size, (_) => List.filled(size, '', growable: false));
+    List<List<String>> grid = List.generate(size, (_) => List.filled(size, '', growable: false));
     for (String palabra in palabras) {
       bool colocada = false;
       while (!colocada) {
@@ -115,8 +120,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
     return grid;
   }
 
-  bool puedeColocarPalabra(List<List<String>> grid, String palabra, int fila,
-      int columna, bool horizontal) {
+  bool puedeColocarPalabra(List<List<String>> grid, String palabra, int fila, int columna, bool horizontal) {
     if (horizontal) {
       if (columna + palabra.length > gridSize) return false;
       for (int i = 0; i < palabra.length; i++) {
@@ -131,8 +135,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
     return true;
   }
 
-  void colocarPalabra(List<List<String>> grid, String palabra, int fila,
-      int columna, bool horizontal) {
+  void colocarPalabra(List<List<String>> grid, String palabra, int fila, int columna, bool horizontal) {
     if (horizontal) {
       for (int i = 0; i < palabra.length; i++) {
         grid[fila][columna + i] = palabra[i];
@@ -144,15 +147,31 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
     }
   }
 
+  void reiniciarJuego() {
+    setState(() {
+      palabras = seleccionarPalabrasAleatorias(nivelActual, todasLasPalabras);
+      sopa = generarSopaDeLetras(gridSize, palabras);
+      seleccionadas = List.generate(gridSize, (_) => List.filled(gridSize, false));
+      palabrasEncontradas.clear();
+      celdasEncontradas.clear();
+      mensaje = '';
+      _seconds = 0; // Resetear el tiempo a 0
+
+      _timer?.cancel(); // Cancelar el temporizador existente
+      _startTimer(); // Iniciar un nuevo temporizador
+    });
+  }
+
+
   void seleccionarCelda(int row, int col) {
     setState(() {
       seleccionadas[row][col] = !seleccionadas[row][col];
       if (seleccionadas[row][col]) {
         letrasSeleccionadas.add(sopa[row][col]);
-        _reproducirAudio('assets/audio/select.mp3'); // Reproduce select.mp3
+        _reproducirAudio('assets/audio/select.mp3');
       } else {
         letrasSeleccionadas.remove(sopa[row][col]);
-        _reproducirAudio('assets/audio/deselect.mp3'); // Reproduce deselect.mp3
+        _reproducirAudio('assets/audio/deselect.mp3');
       }
       verificarPalabraSeleccionada();
     });
@@ -160,31 +179,15 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
 
   Future<void> _reproducirAudio(String audioPath) async {
     try {
-      await _audioPlayer.play(AssetSource(audioPath)); // Reproduce el audio
+      await _audioPlayer.play(AssetSource(audioPath));
     } catch (e) {
       print('Error al reproducir el audio: $e');
     }
   }
 
-  void reiniciarJuego() {
-    setState(() {
-      palabras = seleccionarPalabrasAleatorias(4, todasLasPalabras);
-      sopa = generarSopaDeLetras(gridSize, palabras);
-      seleccionadas = List.generate(gridSize, (_) => List.filled(gridSize, false));
-      palabrasEncontradas.clear();
-      celdasEncontradas.clear();
-      mensaje = '';
-      _seconds = 0;
-
-      _timer?.cancel(); // Cancela el Timer actual antes de reiniciar
-      _startTimer(); // Reinicia el cronómetro
-    });
-  }
-
   void verificarPalabraSeleccionada() {
     String palabraFormada = letrasSeleccionadas.join();
-    if (palabras.contains(palabraFormada) &&
-        !palabrasEncontradas.contains(palabraFormada)) {
+    if (palabras.contains(palabraFormada) && !palabrasEncontradas.contains(palabraFormada)) {
       setState(() {
         palabrasEncontradas.add(palabraFormada);
         mensaje = '¡You found the word: "$palabraFormada"!';
@@ -216,8 +219,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
 
   void limpiarSeleccion() {
     setState(() {
-      seleccionadas =
-          List.generate(gridSize, (_) => List.filled(gridSize, false));
+      seleccionadas = List.generate(gridSize, (_) => List.filled(gridSize, false));
       letrasSeleccionadas.clear();
     });
   }
@@ -227,11 +229,11 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.settings), // Icono de ajustes
+          icon: Icon(Icons.settings),
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => PantallaAjustes()), // Navega a la pantalla de ajustes
+              MaterialPageRoute(builder: (context) => PantallaAjustes()),
             );
           },
         ),
@@ -245,7 +247,6 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
         centerTitle: true,
         backgroundColor: Colors.purpleAccent[90],
       ),
-
       body: LayoutBuilder(
         builder: (context, constraints) {
           double cellSize = constraints.maxWidth / gridSize;
@@ -263,7 +264,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
                 ),
               ),
               Expanded(
-                flex: 6, // La cuadrícula ocupa la mayor parte del espacio disponible
+                flex: 6,
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: gridSize,
@@ -313,7 +314,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
                   },
                 ),
               ),
-              SizedBox(height: 16), // Añade un espacio fijo entre la cuadrícula y las palabras
+              SizedBox(height: 16),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
@@ -345,7 +346,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
                   );
                 }).toList(),
               ),
-              Spacer(flex: 1), // Añade un poco de espacio vacío en la parte inferior
+              Spacer(flex: 1),
             ],
           );
         },
