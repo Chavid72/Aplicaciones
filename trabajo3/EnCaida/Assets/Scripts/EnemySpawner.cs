@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab; // Prefab del enemigo (el cuadrado)
-    public float spawnInterval = 2f; // Tiempo entre spawns
-    public float minX = -2f; // Límite izquierdo
+    public GameObject enemyPrefab; // Prefab del enemigo
+    public float initialSpawnInterval = 2f; // Intervalo inicial entre spawns
+    public float minSpawnInterval = 0.5f; // Mínimo intervalo entre spawns
+    public float spawnIntervalDecreaseRate = 0.05f; // Reducción del intervalo con el tiempo
+    public float minX = -2f; // Límite izquierdo para spawnear enemigos
     public float maxX = 2f; // Límite derecho
     public float startSpeed = 1f; // Velocidad inicial de los enemigos
-    public float speedIncreaseRate = 0.1f; // Incremento de velocidad con el tiempo
+    public float speedIncreaseRate = 0.1f; // Incremento de velocidad de los enemigos
 
     private float currentSpeed; // Velocidad actual de los enemigos
+    private float currentSpawnInterval; // Intervalo actual de spawn
 
     // Start is called before the first frame update
     void Start()
     {
         currentSpeed = startSpeed;
+        currentSpawnInterval = initialSpawnInterval;
         StartCoroutine(SpawnEnemies());
     }
 
@@ -31,8 +35,8 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             SpawnEnemy();
-            yield return new WaitForSeconds(spawnInterval);
-            IncreaseSpeedOverTime();
+            yield return new WaitForSeconds(currentSpawnInterval);
+            AdjustDifficultyOverTime();
         }
     }
     void SpawnEnemy()
@@ -50,8 +54,12 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    void IncreaseSpeedOverTime()
+    void AdjustDifficultyOverTime()
     {
-        currentSpeed += speedIncreaseRate; // Incrementa la velocidad poco a poco
+        // Incrementar la velocidad de los enemigos
+        currentSpeed += speedIncreaseRate;
+
+        // Reducir el intervalo de spawn, pero no menos que el mínimo permitido
+        currentSpawnInterval = Mathf.Max(minSpawnInterval, currentSpawnInterval - spawnIntervalDecreaseRate);
     }
 }
