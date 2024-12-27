@@ -2,12 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class Options : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] GameObject englishSelected; 
-    [SerializeField] GameObject spanishSelected; 
+    [SerializeField] GameObject spanishSelected;
+
+    [SerializeField] GameObject darkModeSelected;
+    [SerializeField] GameObject clearModeSelected;
+
+    [SerializeField] AudioMixer ambientMixer; 
+    [SerializeField] AudioMixer effectMixer;
+
+    [SerializeField] Slider ambientSlider;
+    [SerializeField] Slider effectSlider; 
+   
 
 
     void Start()
@@ -15,12 +27,23 @@ public class Options : MonoBehaviour
         int ID = PlayerPrefs.GetInt("LocalKey",0);
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[ID];
         selectedLenguage(ID);
+
+        float volume = PlayerPrefs.GetFloat("Ambient");
+        setAmbientVolume(volume);
+        ambientSlider.value = volume;
+
+        float volume2 = PlayerPrefs.GetFloat("Effects");
+        setEffectsVolume(volume2);
+        effectSlider.value = volume2;
+
+        selectedMode(PlayerPrefs.GetInt("Mode"));
     }
 
     public void setLanguage(int ID)
     {
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[ID];
         selectedLenguage(ID);
+        PlayerPrefs.SetInt("LocalKey", ID);
     }
 
     public void selectedLenguage(int ID)
@@ -38,5 +61,36 @@ public class Options : MonoBehaviour
 
     }
 
+    public void selectedMode(int i)
+    {
+        if (i == 0)
+        {
+            clearModeSelected.SetActive(true);
+            darkModeSelected.SetActive(false);
+        }
+        else
+        {
+            clearModeSelected.SetActive(false);
+            darkModeSelected.SetActive(true);
+        }
+
+    }
+
+    public void setEffectsVolume(float volume)
+    {
+        PlayerPrefs.SetFloat("Effects", volume);
+        effectMixer.SetFloat("VolumeEffects", volume);
+    }
+    public void setAmbientVolume(float volume)
+    {
+        PlayerPrefs.SetFloat("Ambient", volume);
+        effectMixer.SetFloat("VolumeAmbient", volume);
+    }
+
+    public void setMode(int i)
+    {
+        selectedMode(i);
+        PlayerPrefs.SetInt("Mode", i);
+    }
 }
 
