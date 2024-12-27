@@ -139,8 +139,8 @@
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SkinningModule\Selection\BoneSelection.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SkinningModule\UI\PastePanel.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SkinningModule\PivotTool.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SkinningModule\WeightsGenerator\BoundedBiharmonicWeightsGenerator.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SpriteLib\SpriteLibraryEditor\SpriteLibraryEditorModel.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SkinningModule\WeightsGenerator\BoundedBiharmonicWeightsGenerator.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SkinningModule\AssociateBonesScope.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SpriteSkin\BoneGizmo.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SpriteLib\SpriteLibraryDataProvider.cs" />
@@ -214,8 +214,8 @@
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SkinningModule\SkinningModuleView.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SkinningModule\CopyTool.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SkinningModule\VisibilityTool\BoneReparentTool.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SkinningModule\BaseTool.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SkinningModule\Cache\Cache.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SkinningModule\BaseTool.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SkinningModule\MathUtility.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SkinningModule\VisibilityTool\BoneVisibilityToolInterface.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.1.2\Editor\SpriteLib\SpriteLibrarySourceAsset\SpriteLibrarySourceAssetPropertyString.cs" />
@@ -683,6 +683,10 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
