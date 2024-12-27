@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "46deccf8",
+    "m_SelectedDeviceId": "1dc7b6bd",
     "m_SelectedProcess": {
-        "deviceId": "46deccf8",
-        "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 21317,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -18,6 +18,12 @@
             "deviceId": "46deccf8",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 21317,
+            "exited": false
+        },
+        {
+            "deviceId": "1dc7b6bd",
+            "name": "com.miui.home",
+            "processId": 2744,
             "exited": false
         }
     ],

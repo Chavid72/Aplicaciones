@@ -247,7 +247,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
         centerTitle: true,
         backgroundColor: Colors.purpleAccent[90],
       ),
-      body: LayoutBuilder(
+      body: LayoutBuilder( //responsivo
         builder: (context, constraints) {
           double cellSize = constraints.maxWidth / gridSize;
           return Column(
@@ -279,7 +279,7 @@ class _SopaDeLetrasState extends State<SopaDeLetras> {
                             (celda) => celda[0] == row && celda[1] == col);
                     return GestureDetector(
                       onTap: () => seleccionarCelda(row, col),
-                      child: AnimatedContainer(
+                      child: AnimatedContainer( //Animaciones
                         duration: Duration(milliseconds: 500),
                         curve: Curves.easeInOut,
                         decoration: BoxDecoration(
