@@ -10,6 +10,16 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
+    public void LoadOptions()
+    {
+        SceneManager.LoadScene("Options");
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     // Método para salir del juego
     public void ExitGame()
     {
