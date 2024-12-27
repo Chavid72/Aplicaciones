@@ -29,6 +29,7 @@ public class CanvasController : MonoBehaviour
     {
         if (Time.timeScale == 1)
         {
+            
             Time.timeScale = 0; // Pausar el juego
             Debug.Log("Juego pausado");
         }
