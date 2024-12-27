@@ -60,6 +60,13 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
+=======
+    <Compile Include="Assets\Scripts\CanvasController.cs" />
+    <Compile Include="Assets\Scripts\MainMenuController.cs" />
+    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\EnemyMovement.cs" />
+>>>>>>> Stashed changes
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Localization\Tables\Scripts\MainMenuController.cs" />
     <Compile Include="Assets\Localization\Tables\Scripts\Options.cs" />
