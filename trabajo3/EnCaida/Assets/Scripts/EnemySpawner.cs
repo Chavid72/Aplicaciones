@@ -8,8 +8,8 @@ public class EnemySpawner : MonoBehaviour
     public float initialSpawnInterval = 2f; // Intervalo inicial entre spawns
     public float minSpawnInterval = 0.5f; // Mínimo intervalo entre spawns
     public float spawnIntervalDecreaseRate = 0.05f; // Reducción del intervalo con el tiempo
-    public float minX = -2f; // Límite izquierdo para spawnear enemigos
-    public float maxX = 2f; // Límite derecho
+    public float minX = -2.7f; // Límite izquierdo para spawnear enemigos
+    public float maxX = 2.7f; // Límite derecho
     public float startSpeed = 1f; // Velocidad inicial de los enemigos
     public float speedIncreaseRate = 0.1f; // Incremento de velocidad de los enemigos
 

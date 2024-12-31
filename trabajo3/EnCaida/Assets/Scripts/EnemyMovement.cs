@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     private float speed = 1f;
+    public int damage = 1;
 
     public void SetSpeed(float newSpeed)
     {
@@ -14,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log("Globo Spawneado");
+        Debug.Log("Globo Spawneado");
     }
 
     // Update is called once per frame
@@ -30,11 +31,11 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            Debug.Log("Hacer daño");
+            collision.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
         }
     }
 }

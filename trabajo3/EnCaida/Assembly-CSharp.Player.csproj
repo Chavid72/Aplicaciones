@@ -872,6 +872,10 @@
       <Project>{9FAEA714-0081-F287-FA2D-C070B23769B5}</Project>
       <Name>Unity.Collections.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AdaptivePerformance.Google.Android.Player.csproj">
+      <Project>{0F7D4DA7-BFE7-3A73-CC3D-F511D72062D5}</Project>
+      <Name>Unity.AdaptivePerformance.Google.Android.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.2D.SpriteShape.Runtime.Player.csproj">
       <Project>{3A4065D6-FAD0-9004-0237-1A742367AF78}</Project>
       <Name>Unity.2D.SpriteShape.Runtime.Player</Name>
@@ -891,6 +895,10 @@
     <ProjectReference Include="Unity.Profiling.Core.Player.csproj">
       <Project>{C0ECFBA7-3E6F-4D17-7B58-0A7A88F2D321}</Project>
       <Name>Unity.Profiling.Core.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.AdaptivePerformance.Samsung.Android.Player.csproj">
+      <Project>{254C6EE3-842C-6DB5-3E83-DA561E41A74C}</Project>
+      <Name>Unity.AdaptivePerformance.Samsung.Android.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Burst.Player.csproj">
       <Project>{C022EFF6-1E48-7775-9F30-9418C60880B2}</Project>
@@ -931,10 +939,6 @@
     <ProjectReference Include="Unity.Timeline.Player.csproj">
       <Project>{FE96F5D0-33EC-CB81-95E9-7438D96F723C}</Project>
       <Name>Unity.Timeline.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Subsystem.Registration.Player.csproj">
-      <Project>{FC7C94C3-51A7-1B23-3C5B-2893365AA9FE}</Project>
-      <Name>Unity.Subsystem.Registration.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.Player.csproj">
       <Project>{3FAE559C-EF4A-3FB9-5A36-A0C6E5E98927}</Project>

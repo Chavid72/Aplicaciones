@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 10f; // Velocidad de movimiento
     public float maxX = 2.5f; // Limite máximo en X
+
     public int health = 3;
 
     // Start is called before the first frame update
@@ -29,5 +30,12 @@ public class PlayerController : MonoBehaviour
 
         // Aplicar la nueva posición
         transform.position = newPosition;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        Debug.Log("Player Health: " + health);
+
     }
 }

@@ -1000,6 +1000,10 @@
       <Project>{5E9F78CF-42E4-E859-22DE-2C1CB93F93C6}</Project>
       <Name>Unity.PlasticSCM.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AdaptivePerformance.Google.Android.csproj">
+      <Project>{C54C6508-9D74-513A-202E-E2EB7F885C54}</Project>
+      <Name>Unity.AdaptivePerformance.Google.Android</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
       <Project>{3C72CFF2-E9D4-5CA2-408B-956867C50CA6}</Project>
       <Name>Unity.2D.SpriteShape.Runtime</Name>
@@ -1028,6 +1032,10 @@
       <Project>{BB0BF606-2F2D-006B-AAA7-EC6470F8A061}</Project>
       <Name>Unity.Profiling.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AdaptivePerformance.Samsung.Android.csproj">
+      <Project>{F3ED20AF-A865-8BED-3328-449A48178ECB}</Project>
+      <Name>Unity.AdaptivePerformance.Samsung.Android</Name>
+    </ProjectReference>
     <ProjectReference Include="PsdPlugin.csproj">
       <Project>{492C84D7-47A3-1765-8AE6-033801EB94D9}</Project>
       <Name>PsdPlugin</Name>
@@ -1035,6 +1043,10 @@
     <ProjectReference Include="Unity.Burst.csproj">
       <Project>{EDEDAEBC-3B68-B79A-1118-A02C7FDF0E7D}</Project>
       <Name>Unity.Burst</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.AdaptivePerformance.Google.Android.Editor.csproj">
+      <Project>{DCCEFBFC-F11D-9BBF-330C-32DAA53DB563}</Project>
+      <Name>Unity.AdaptivePerformance.Google.Android.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.Editor.csproj">
       <Project>{F7B3537C-4A80-AD5B-46C2-4A4D35EA6F93}</Project>
@@ -1044,9 +1056,17 @@
       <Project>{29787F56-64F4-B254-B70B-892462829D93}</Project>
       <Name>Unity.VisualScripting.Shared.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AdaptivePerformance.Simulator.Google.Extension.csproj">
+      <Project>{701F37F8-0ED7-F75A-F2B4-313782080D3B}</Project>
+      <Name>Unity.AdaptivePerformance.Simulator.Google.Extension</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.AdaptivePerformance.csproj">
       <Project>{907F00BC-163D-8999-9B59-F79CB2B9182B}</Project>
       <Name>Unity.AdaptivePerformance</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.AdaptivePerformance.Simulator.VRR.Extension.csproj">
+      <Project>{D4C8F7FD-AB05-B764-8B37-18C0B7DD5CD5}</Project>
+      <Name>Unity.AdaptivePerformance.Simulator.VRR.Extension</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Localization.csproj">
       <Project>{DB1BAFFE-8840-589D-CE35-1067414AF534}</Project>
@@ -1075,6 +1095,10 @@
     <ProjectReference Include="Unity.VisualScripting.Core.Editor.csproj">
       <Project>{677AD384-E95A-698B-3537-0F4381452191}</Project>
       <Name>Unity.VisualScripting.Core.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.AdaptivePerformance.Samsung.Android.Editor.csproj">
+      <Project>{8FE4345F-FDCD-AE10-EB32-CE8C9E95F51D}</Project>
+      <Name>Unity.AdaptivePerformance.Samsung.Android.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.AdaptivePerformance.Profiler.Editor.csproj">
       <Project>{0849129D-3B1C-9E69-92BE-47B4016FFA4F}</Project>
@@ -1123,10 +1147,6 @@
     <ProjectReference Include="Unity.2D.Psdimporter.Editor.csproj">
       <Project>{BFF99C4D-FB76-6334-3862-970A09DE00F9}</Project>
       <Name>Unity.2D.Psdimporter.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Subsystem.Registration.csproj">
-      <Project>{1E713BFB-0F9E-5ED3-24EC-8A9C4DD47B37}</Project>
-      <Name>Unity.Subsystem.Registration</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Mobile.AndroidLogcat.Editor.csproj">
       <Project>{C3280DC4-DDCE-057D-789B-47C3F0DEE4F8}</Project>
