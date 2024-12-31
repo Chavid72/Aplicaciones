@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 10f; // Velocidad de movimiento
     public float maxX = 2.5f; // Limite máximo en X
+    public int health = 3;
 
     // Start is called before the first frame update
     void Start()

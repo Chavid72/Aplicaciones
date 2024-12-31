@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|c:\\users\\torne\\desktop\\trabajos\\aplicaciones moviles\\aplicaciones\\trabajo3\\encaida\\assets\\scripts\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|c:\\users\\torne\\desktop\\trabajos\\aplicaciones moviles\\aplicaciones\\trabajo3\\encaida\\assets\\scripts\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|c:\\users\\torne\\desktop\\trabajos\\aplicaciones moviles\\aplicaciones\\trabajo3\\encaida\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\canvascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,11 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "GameController.cs",
               "DocumentMoniker": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\GameController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameController.cs",
@@ -50,12 +50,11 @@
               "RelativeToolTip": "Assets\\Scripts\\GameController.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAgwB0AAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T18:22:05.282Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-30T18:22:05.282Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Options.cs",
               "DocumentMoniker": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\Options.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Options.cs",
@@ -67,7 +66,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CanvasController.cs",
               "DocumentMoniker": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\CanvasController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CanvasController.cs",
@@ -79,15 +78,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "EnemyMovement.cs",
               "DocumentMoniker": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\EnemyMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyMovement.cs",
               "ToolTip": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\EnemyMovement.cs",
               "RelativeToolTip": "Assets\\Scripts\\EnemyMovement.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwA8AAAAIAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAA9wCYAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T14:49:07.54Z"
+              "WhenOpened": "2024-12-27T14:49:07.54Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -109,10 +109,9 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
               "ToolTip": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAABWAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAgwB8AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T09:47:05.407Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-23T09:47:05.407Z"
             },
             {
               "$type": "Document",
