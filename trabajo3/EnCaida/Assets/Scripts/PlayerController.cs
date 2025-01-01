@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -53,6 +54,12 @@ public class PlayerController : MonoBehaviour
     {
         health -= damage;
         Debug.Log("Player Health: " + health);
+
+        if(health <= 0)
+        {
+            SceneManager.LoadScene("LoseScene");
+        }
+
         StartCoroutine(BlinkRed());
         UIController.LoseHealth(damage);
     }

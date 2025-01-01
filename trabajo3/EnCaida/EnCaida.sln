@@ -47,9 +47,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.Core.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.IK.Runtime", "Unity.2D.IK.Runtime.csproj", "{459EFD64-AA97-3DDE-2D62-6CB34C2F1FC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.Flow.Editor", "Unity.VisualScripting.Flow.Editor.csproj", "{922B791B-9B53-65D1-8977-DC73C4BE0C56}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.Play.Games", "Google.Play.Games.csproj", "{8626E43B-2529-5BFE-3310-54A7F4203C3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.Flow.Editor", "Unity.VisualScripting.Flow.Editor.csproj", "{922B791B-9B53-65D1-8977-DC73C4BE0C56}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEditor.TestRunner", "UnityEditor.TestRunner.csproj", "{6962BB9A-05EB-8B5D-1789-A8FE97FBCE28}"
 EndProject
@@ -323,14 +323,14 @@ Global
 		{459EFD64-AA97-3DDE-2D62-6CB34C2F1FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{459EFD64-AA97-3DDE-2D62-6CB34C2F1FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{459EFD64-AA97-3DDE-2D62-6CB34C2F1FC4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{922B791B-9B53-65D1-8977-DC73C4BE0C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{922B791B-9B53-65D1-8977-DC73C4BE0C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{922B791B-9B53-65D1-8977-DC73C4BE0C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{922B791B-9B53-65D1-8977-DC73C4BE0C56}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8626E43B-2529-5BFE-3310-54A7F4203C3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8626E43B-2529-5BFE-3310-54A7F4203C3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8626E43B-2529-5BFE-3310-54A7F4203C3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8626E43B-2529-5BFE-3310-54A7F4203C3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{922B791B-9B53-65D1-8977-DC73C4BE0C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{922B791B-9B53-65D1-8977-DC73C4BE0C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{922B791B-9B53-65D1-8977-DC73C4BE0C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{922B791B-9B53-65D1-8977-DC73C4BE0C56}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6962BB9A-05EB-8B5D-1789-A8FE97FBCE28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6962BB9A-05EB-8B5D-1789-A8FE97FBCE28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6962BB9A-05EB-8B5D-1789-A8FE97FBCE28}.Release|Any CPU.ActiveCfg = Release|Any CPU
