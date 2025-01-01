@@ -67,17 +67,18 @@
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\Login\LoginGoogle.cs" />
     <Compile Include="Assets\Scripts\Options.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\GooglePlayGames\com.google.play.games\Proguard\games.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -981,6 +982,10 @@
       <Project>{4A85D7A8-14B8-A733-D2C4-AFA0AC2BCD6F}</Project>
       <Name>Unity.2D.Sprite.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Google.Play.Games.Editor.csproj">
+      <Project>{EBBC3D5E-F33A-1518-6CDF-2240818FCB60}</Project>
+      <Name>Google.Play.Games.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
       <Project>{BAF0D6EF-F923-538F-917B-AAB867303EA0}</Project>
       <Name>Unity.VisualScripting.Flow</Name>
@@ -1132,6 +1137,10 @@
     <ProjectReference Include="Unity.Timeline.csproj">
       <Project>{E4B14F0E-E63B-5F86-D0A0-755291246C83}</Project>
       <Name>Unity.Timeline</Name>
+    </ProjectReference>
+    <ProjectReference Include="Google.Play.Games.csproj">
+      <Project>{8626E43B-2529-5BFE-3310-54A7F4203C3C}</Project>
+      <Name>Google.Play.Games</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
       <Project>{BC505C79-1D14-D8AD-C3C9-D5BF181243C8}</Project>

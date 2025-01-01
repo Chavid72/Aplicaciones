@@ -64,11 +64,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\differences.ja.txt" />
+    <None Include="Assets\ExternalDependencyManager\Editor\1.2.182\Google.PackageManagerResolver.dll" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\cm-help.ko.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\semantic.es.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\basecommands.en.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\binmergetool.zh-Hant.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\commontypes.ko.txt" />
+    <None Include="Assets\ExternalDependencyManager\Editor\Google.VersionHandler.dll" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\guihelp.en.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\workspaceserver.zh-Hans.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\i3.zh-Hans.txt" />
@@ -78,6 +80,7 @@
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\differences.ko.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\common.es.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\images.ko.txt" />
+    <None Include="Assets\ExternalDependencyManager\Editor\1.2.182\Google.VersionHandlerImpl.dll" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\basecommands.zh-Hant.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\xdiff.zh-Hans.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\mergetool.es.txt" />
@@ -91,6 +94,7 @@
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\unityplastic.dll" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Unity.Plastic.Antlr3.Runtime.dll" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\guihelp.ja.txt" />
+    <None Include="Assets\ExternalDependencyManager\Editor\1.2.182\Google.IOSResolver.dll" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\configurehelper.zh-Hant.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\binmergetool.es.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\cm.es.txt" />
@@ -107,6 +111,7 @@
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\semantic.zh-Hans.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\plastic-gui.ja.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\configurehelper.ja.txt" />
+    <None Include="Assets\ExternalDependencyManager\Editor\external-dependency-manager_version-1.2.182_manifest.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\binmergetool.en.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\binmergetool.ko.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\plastic-gui.en.txt" />
@@ -138,6 +143,7 @@
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\xdiff.es.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\differences.es.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\images.zh-Hans.txt" />
+    <None Include="Assets\ExternalDependencyManager\Editor\1.2.182\Google.JarResolver.dll" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\mergetool.zh-Hans.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\differences.zh-Hant.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\Lib\Editor\Localization\configurehelper.en.txt" />
@@ -560,6 +566,26 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Google.VersionHandler">
+      <HintPath>Assets\ExternalDependencyManager\Editor\Google.VersionHandler.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Google.PackageManagerResolver">
+      <HintPath>Assets\ExternalDependencyManager\Editor\1.2.182\Google.PackageManagerResolver.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Google.IOSResolver">
+      <HintPath>Assets\ExternalDependencyManager\Editor\1.2.182\Google.IOSResolver.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Google.VersionHandlerImpl">
+      <HintPath>Assets\ExternalDependencyManager\Editor\1.2.182\Google.VersionHandlerImpl.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Google.JarResolver">
+      <HintPath>Assets\ExternalDependencyManager\Editor\1.2.182\Google.JarResolver.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="nunit.framework">
@@ -1144,6 +1170,10 @@
       <Project>{4A85D7A8-14B8-A733-D2C4-AFA0AC2BCD6F}</Project>
       <Name>Unity.2D.Sprite.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Google.Play.Games.Editor.csproj">
+      <Project>{EBBC3D5E-F33A-1518-6CDF-2240818FCB60}</Project>
+      <Name>Google.Play.Games.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
       <Project>{BAF0D6EF-F923-538F-917B-AAB867303EA0}</Project>
       <Name>Unity.VisualScripting.Flow</Name>
@@ -1295,6 +1325,10 @@
     <ProjectReference Include="Unity.Timeline.csproj">
       <Project>{E4B14F0E-E63B-5F86-D0A0-755291246C83}</Project>
       <Name>Unity.Timeline</Name>
+    </ProjectReference>
+    <ProjectReference Include="Google.Play.Games.csproj">
+      <Project>{8626E43B-2529-5BFE-3310-54A7F4203C3C}</Project>
+      <Name>Google.Play.Games</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
       <Project>{BC505C79-1D14-D8AD-C3C9-D5BF181243C8}</Project>
