@@ -436,6 +436,9 @@ MonoBehaviour:
   speed: 10
   maxX: 2.5
   health: 3
+  UIController: {fileID: 609104987}
+  blinkDuration: 0.1
+  blinkCount: 5
 --- !u!61 &504686381
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3024,63 +3027,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ad1668d795efad4989f0a7cb51c86f6, type: 3}
---- !u!1001 &6261200230825314613
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4633747270269910986, guid: 6ce52908b640ef54d9bcd81dc2feca10, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4633747270269910986, guid: 6ce52908b640ef54d9bcd81dc2feca10, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4633747270269910986, guid: 6ce52908b640ef54d9bcd81dc2feca10, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4633747270269910986, guid: 6ce52908b640ef54d9bcd81dc2feca10, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4633747270269910986, guid: 6ce52908b640ef54d9bcd81dc2feca10, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4633747270269910986, guid: 6ce52908b640ef54d9bcd81dc2feca10, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4633747270269910986, guid: 6ce52908b640ef54d9bcd81dc2feca10, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4633747270269910986, guid: 6ce52908b640ef54d9bcd81dc2feca10, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4633747270269910986, guid: 6ce52908b640ef54d9bcd81dc2feca10, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4633747270269910986, guid: 6ce52908b640ef54d9bcd81dc2feca10, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4694674588580034891, guid: 6ce52908b640ef54d9bcd81dc2feca10, type: 3}
-      propertyPath: m_Name
-      value: Baloon_ExplosionParticles
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6ce52908b640ef54d9bcd81dc2feca10, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3094,4 +3040,3 @@ SceneRoots:
   - {fileID: 1663546215}
   - {fileID: 504686383}
   - {fileID: 6161633423863275599}
-  - {fileID: 6261200230825314613}

@@ -5,24 +5,30 @@ using UnityEngine;
 public class CanvasController : MonoBehaviour
 {
     public GameObject[] hearth;
-    public int health = 3;
+    public int health;
 
     // Start is called before the first frame update
     void Start()
     {
-        hearth = new GameObject[health];
+
     }
 
-    public void LoseHealth(int healthPoints)
+    public void LoseHealth(int damage)
     {
-        hearth[health].SetActive(false);
-        //health--;
+        for(int i = damage; i > 0; i--) 
+        {
+            hearth[health-1].SetActive(false);
+            health--;
+        }
     }
 
     public void GainHealth(int healthPoints)
     {
-        hearth[health-1].SetActive(true);
-        //health++;
+        for(int i = healthPoints; i > 0; i--)
+        {
+            hearth[health].SetActive(true);
+            health++;
+        }
     }
 
     public void StopAndResumeGame()
@@ -37,6 +43,16 @@ public class CanvasController : MonoBehaviour
         {
             Time.timeScale = 1; // Reanudar el juego
             Debug.Log("Juego reanudado");
+        }
+    }
+    public void StartHealth(int startHealth) // Establece las vidas con las que se empieza desde el PlayerController.
+    {
+        health = startHealth;
+        //hearth = new GameObject[health];
+
+        for (int i = 0; i < hearth.Length; i++)
+        {
+            hearth[i].SetActive(true);
         }
     }
 }

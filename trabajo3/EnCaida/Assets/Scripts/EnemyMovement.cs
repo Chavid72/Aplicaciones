@@ -8,6 +8,8 @@ public class EnemyMovement : MonoBehaviour
     private float speed = 1f;
     public int damage = 1;
 
+    public ParticleSystem particles;
+
     public void SetSpeed(float newSpeed)
     {
         speed = newSpeed;
@@ -36,6 +38,8 @@ public class EnemyMovement : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
+            Instantiate(particles, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
         }
     }
 }

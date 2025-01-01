@@ -10,10 +10,27 @@ public class PlayerController : MonoBehaviour
 
     public int health = 3;
 
-    // Start is called before the first frame update
+    public CanvasController UIController;
+
+    ///////////////////////////////////////////////
+    /// <Cosas para la corutina del parpadeo> ///
+    /// // Referencia al sprite Renderer del jugador
+    private SpriteRenderer spriteRenderer;
+    // Color original del sprite
+    private Color originalColor;
+    // Tiempo de duración de cada parpadeo
+    public float blinkDuration = 0.1f;
+    // Número de parpadeos rápidos
+    public int blinkCount = 5;
+    ///////////////////////////////////////////////
+
     void Start()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
+
+        //UIController = GetComponent<CanvasController>();
+        UIController.StartHealth(health); // Le decimos a la UI con cuantas vidas empezamos.
     }
 
     // Update is called once per frame
@@ -36,6 +53,25 @@ public class PlayerController : MonoBehaviour
     {
         health -= damage;
         Debug.Log("Player Health: " + health);
+        StartCoroutine(BlinkRed());
+        UIController.LoseHealth(damage);
+    }
 
+    IEnumerator BlinkRed()
+    {
+        for (int i = 0; i < blinkCount; i++)
+        {
+            // Cambiar el color a rojo
+            spriteRenderer.color = Color.red;
+
+            // Esperar un tiempo corto
+            yield return new WaitForSeconds(blinkDuration);
+
+            // Volver al color original
+            spriteRenderer.color = originalColor;
+
+            // Esperar otro tiempo corto
+            yield return new WaitForSeconds(blinkDuration);
+        }
     }
 }
