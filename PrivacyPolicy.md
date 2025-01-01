@@ -46,7 +46,7 @@ Podemos actualizar esta política de privacidad en el futuro para reflejar cambi
 ---
 
 ### 8. Contacto
-Si tienes alguna pregunta sobre esta Política de Privacidad o sobre **FallOff**, puedes contactarnos en: [Tu correo electrónico de soporte o página web].
+Si tienes alguna pregunta sobre esta Política de Privacidad o sobre **FallOff**, puedes contactarnos en: nestorbermejillogonzalez@gmail.com.
 
 ---
 
