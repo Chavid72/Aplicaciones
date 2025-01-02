@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|c:\\users\\torne\\desktop\\trabajos\\aplicaciones moviles\\aplicaciones\\trabajo3\\encaida\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|c:\\users\\torne\\desktop\\trabajos\\aplicaciones moviles\\aplicaciones\\trabajo3\\encaida\\assets\\scripts\\mainmenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\mainmenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\canvascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
@@ -94,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
@@ -102,8 +102,7 @@
               "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
               "ViewState": "AQIAACMAAAAAAAAAAAAgwDsAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T09:47:05.407Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-23T09:47:05.407Z"
             },
             {
               "$type": "Document",
@@ -131,15 +130,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainMenuController.cs",
               "DocumentMoniker": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\MainMenuController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenuController.cs",
               "ToolTip": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\MainMenuController.cs",
               "RelativeToolTip": "Assets\\Scripts\\MainMenuController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAkwAYAAAABAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAkwAYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T09:29:33.239Z"
+              "WhenOpened": "2024-12-23T09:29:33.239Z",
+              "EditorCaption": ""
             }
           ]
         }
