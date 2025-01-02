@@ -76,7 +76,6 @@
     <None Include="Assets\GooglePlayGames\com.google.play.games\Proguard\games.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
@@ -1084,10 +1083,6 @@
       <Project>{701F37F8-0ED7-F75A-F2B4-313782080D3B}</Project>
       <Name>Unity.AdaptivePerformance.Simulator.Google.Extension</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.AdaptivePerformance.csproj">
-      <Project>{907F00BC-163D-8999-9B59-F79CB2B9182B}</Project>
-      <Name>Unity.AdaptivePerformance</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.AdaptivePerformance.Simulator.VRR.Extension.csproj">
       <Project>{D4C8F7FD-AB05-B764-8B37-18C0B7DD5CD5}</Project>
       <Name>Unity.AdaptivePerformance.Simulator.VRR.Extension</Name>
@@ -1095,6 +1090,10 @@
     <ProjectReference Include="Unity.Localization.csproj">
       <Project>{DB1BAFFE-8840-589D-CE35-1067414AF534}</Project>
       <Name>Unity.Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.AdaptivePerformance.csproj">
+      <Project>{907F00BC-163D-8999-9B59-F79CB2B9182B}</Project>
+      <Name>Unity.AdaptivePerformance</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
       <Project>{750131B0-03AA-B89F-FFAB-425B3BE2E1D2}</Project>
@@ -1124,21 +1123,21 @@
       <Project>{8FE4345F-FDCD-AE10-EB32-CE8C9E95F51D}</Project>
       <Name>Unity.AdaptivePerformance.Samsung.Android.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.AdaptivePerformance.Profiler.Editor.csproj">
-      <Project>{0849129D-3B1C-9E69-92BE-47B4016FFA4F}</Project>
-      <Name>Unity.AdaptivePerformance.Profiler.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
       <Project>{FF2308EC-7630-16B2-EDFD-8BDE44FAA2B4}</Project>
       <Name>Unity.2D.Tilemap.Extras</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{B78DF43B-45DD-08E0-E5EC-1927AE33C006}</Project>
-      <Name>UnityEngine.UI</Name>
+    <ProjectReference Include="Unity.AdaptivePerformance.Profiler.Editor.csproj">
+      <Project>{0849129D-3B1C-9E69-92BE-47B4016FFA4F}</Project>
+      <Name>Unity.AdaptivePerformance.Profiler.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.AdaptivePerformance.UI.Editor.csproj">
       <Project>{3949F3E9-FC46-F6BE-24D5-FFE5C9228BCC}</Project>
       <Name>Unity.AdaptivePerformance.UI.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{B78DF43B-45DD-08E0-E5EC-1927AE33C006}</Project>
+      <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj">
       <Project>{922B791B-9B53-65D1-8977-DC73C4BE0C56}</Project>

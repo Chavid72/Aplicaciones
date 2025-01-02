@@ -76,7 +76,6 @@
     <None Include="Assets\GooglePlayGames\com.google.play.games\Proguard\games.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
@@ -920,13 +919,13 @@
       <Project>{C022EFF6-1E48-7775-9F30-9418C60880B2}</Project>
       <Name>Unity.Burst.Player</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.AdaptivePerformance.Player.csproj">
-      <Project>{933C27A0-0D31-B24C-0E35-954C5DE59B42}</Project>
-      <Name>Unity.AdaptivePerformance.Player</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.Localization.Player.csproj">
       <Project>{4873CB47-3D96-76E1-DC59-C6792364A208}</Project>
       <Name>Unity.Localization.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.AdaptivePerformance.Player.csproj">
+      <Project>{933C27A0-0D31-B24C-0E35-954C5DE59B42}</Project>
+      <Name>Unity.AdaptivePerformance.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
       <Project>{32F6121F-22C6-0BA0-3693-13D0D91201A7}</Project>

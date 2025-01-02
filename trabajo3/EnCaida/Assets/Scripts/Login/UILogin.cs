@@ -26,7 +26,7 @@ public class UILogin : MonoBehaviour
         loginPanel.gameObject.SetActive(false);
         userPanel.gameObject.SetActive(true);
 
-        userIDText.text = $"id_{playerInfo.Id}";
+        userIDText.text = $"id_{playerInfo.Id} " + " \n Player name: " + playerName;
         Debug.Log(playerName);
     }
 
