@@ -62,12 +62,12 @@
   <ItemGroup>
     <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.3.2\Runtime\Android\AndroidNotificationChannel.cs" />
     <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.3.2\Runtime\Android\AndroidNotificationIntentData.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.3.2\Runtime\Android\AssemblyInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.3.2\Runtime\Android\AndroidNotificationCenter.cs" />
     <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.3.2\Runtime\Android\AndroidNotificationCallback.cs" />
     <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.3.2\Runtime\Android\NotificationPermission.cs" />
     <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.3.2\Runtime\Android\AndroidNotification.cs" />
     <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.3.2\Runtime\Android\AndroidReceivedNotificationMainThreadDispatcher.cs" />
-    <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.3.2\Runtime\Android\AssemblyInfo.cs" />
-    <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.3.2\Runtime\Android\AndroidNotificationCenter.cs" />
     <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.3.2\Runtime\Android\AndroidNotificationExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

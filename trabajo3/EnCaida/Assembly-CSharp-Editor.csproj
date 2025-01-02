@@ -1146,6 +1146,10 @@
       <Project>{301E849B-8F73-6EF2-CBB9-FD881750DF9F}</Project>
       <Name>Unity.ScriptableBuildPipeline</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Services.Core.csproj">
+      <Project>{E605F779-1809-FE0C-36A9-BE66ADDF9886}</Project>
+      <Name>Unity.Services.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.AdaptivePerformance.Simulator.Extension.csproj">
       <Project>{D5113B60-6A59-50B1-10FF-78C71106DB8B}</Project>
       <Name>Unity.AdaptivePerformance.Simulator.Extension</Name>
@@ -1186,6 +1190,10 @@
       <Project>{22ECABA6-87C8-CF99-920A-83A19CF39CE1}</Project>
       <Name>Unity.2D.Tilemap.Extras.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Services.Core.Environments.csproj">
+      <Project>{607FE5A3-0314-B279-2AAD-24A2DEC5CF8B}</Project>
+      <Name>Unity.Services.Core.Environments</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Collections.csproj">
       <Project>{17BCB446-66B6-C0E3-8A03-8C827121A5C4}</Project>
       <Name>Unity.Collections</Name>
@@ -1214,6 +1222,10 @@
       <Project>{8A238AB9-F0EF-AEA7-12FA-0530E67DF03F}</Project>
       <Name>Unity.2D.Aseprite.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Services.Core.Analytics.csproj">
+      <Project>{C15BBB24-9385-7B30-5B49-1F432AD4D705}</Project>
+      <Name>Unity.Services.Core.Analytics</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{C1069A19-C35A-5E78-82D4-796472A9CD1C}</Project>
       <Name>Unity.VSCode.Editor</Name>
@@ -1237,6 +1249,10 @@
     <ProjectReference Include="Unity.Burst.csproj">
       <Project>{EDEDAEBC-3B68-B79A-1118-A02C7FDF0E7D}</Project>
       <Name>Unity.Burst</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Services.Authentication.Editor.Shared.csproj">
+      <Project>{CC01B3C4-5411-2119-BB2F-3AE1F6809408}</Project>
+      <Name>Unity.Services.Authentication.Editor.Shared</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.AdaptivePerformance.Google.Android.Editor.csproj">
       <Project>{DCCEFBFC-F11D-9BBF-330C-32DAA53DB563}</Project>
@@ -1326,6 +1342,10 @@
       <Project>{E4B14F0E-E63B-5F86-D0A0-755291246C83}</Project>
       <Name>Unity.Timeline</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Services.Core.Components.csproj">
+      <Project>{F8ECCCAD-5093-8C67-331F-6028494B5197}</Project>
+      <Name>Unity.Services.Core.Components</Name>
+    </ProjectReference>
     <ProjectReference Include="Google.Play.Games.csproj">
       <Project>{8626E43B-2529-5BFE-3310-54A7F4203C3C}</Project>
       <Name>Google.Play.Games</Name>
@@ -1353,6 +1373,14 @@
     <ProjectReference Include="Unity.VisualScripting.State.Editor.csproj">
       <Project>{6DD437F5-9DE2-38FE-B21D-70DDFBE534E6}</Project>
       <Name>Unity.VisualScripting.State.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Services.Authentication.csproj">
+      <Project>{BAEF94CA-B138-BF2E-BAB2-DA60716AF2A3}</Project>
+      <Name>Unity.Services.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Services.Authentication.PlayerAccounts.csproj">
+      <Project>{860B5298-E41B-3C8E-BC24-AA408505EEAF}</Project>
+      <Name>Unity.Services.Authentication.PlayerAccounts</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.csproj">
       <Project>{6D28AE77-DFCE-ECA6-0760-D48AADC832E7}</Project>

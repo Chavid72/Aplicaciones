@@ -63,13 +63,14 @@
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Tienda\Shop.cs" />
     <Compile Include="Assets\Scripts\CanvasController.cs" />
-    <Compile Include="Assets\Scripts\MainMenuController.cs" />
-    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Scripts\Login\LoginGoogle.cs" />
     <Compile Include="Assets\Scripts\Options.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\MainMenuController.cs" />
+    <Compile Include="Assets\Scripts\Login\UILogin.cs" />
+    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\Login\LoginController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\GooglePlayGames\com.google.play.games\Proguard\games.txt" />
@@ -867,9 +868,17 @@
       <Project>{AD86A674-B863-6D5E-A0A8-928BF8137A85}</Project>
       <Name>Unity.ScriptableBuildPipeline.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Services.Core.Player.csproj">
+      <Project>{1BA9DBC9-AFDA-564A-6915-336D6DB267D2}</Project>
+      <Name>Unity.Services.Core.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.Player.csproj">
       <Project>{C577C132-79C7-4A23-FAB3-F6F12B7FFA16}</Project>
       <Name>Unity.VisualScripting.Flow.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Services.Core.Environments.Player.csproj">
+      <Project>{DE604C7B-17E7-99C9-2926-6D26EE2E3C84}</Project>
+      <Name>Unity.Services.Core.Environments.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Collections.Player.csproj">
       <Project>{9FAEA714-0081-F287-FA2D-C070B23769B5}</Project>
@@ -890,6 +899,10 @@
     <ProjectReference Include="Unity.TextMeshPro.Player.csproj">
       <Project>{87296814-9D62-07EC-12A3-B7680A42F966}</Project>
       <Name>Unity.TextMeshPro.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Services.Core.Analytics.Player.csproj">
+      <Project>{C4E25196-9E5F-630E-1853-64D74B089637}</Project>
+      <Name>Unity.Services.Core.Analytics.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Notifications.Unified.Player.csproj">
       <Project>{49550C86-E527-B24A-8F8E-2A9C00447498}</Project>
@@ -943,9 +956,21 @@
       <Project>{FE96F5D0-33EC-CB81-95E9-7438D96F723C}</Project>
       <Name>Unity.Timeline.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Services.Core.Components.Player.csproj">
+      <Project>{01D5609A-C3E3-2E22-6E79-816B1654686A}</Project>
+      <Name>Unity.Services.Core.Components.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Google.Play.Games.Player.csproj">
       <Project>{452959B6-2F2F-E80C-4740-6C425130CAED}</Project>
       <Name>Google.Play.Games.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Services.Authentication.Player.csproj">
+      <Project>{F385D848-3BBF-D43A-D663-0DB4297A063E}</Project>
+      <Name>Unity.Services.Authentication.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Services.Authentication.PlayerAccounts.Player.csproj">
+      <Project>{FD6749C6-7190-0A59-1973-43257F54929E}</Project>
+      <Name>Unity.Services.Authentication.PlayerAccounts.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.Player.csproj">
       <Project>{3FAE559C-EF4A-3FB9-5A36-A0C6E5E98927}</Project>

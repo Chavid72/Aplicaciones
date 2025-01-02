@@ -2,8 +2,8 @@
     "m_SelectedDeviceId": "46deccf8",
     "m_SelectedProcess": {
         "deviceId": "46deccf8",
-        "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 13724,
+        "name": "com.Unknova.com.unity.template.mobile2D",
+        "processId": 22524,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -54,6 +54,18 @@
             "deviceId": "46deccf8",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 13724,
+            "exited": false
+        },
+        {
+            "deviceId": "46deccf8",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 16263,
+            "exited": false
+        },
+        {
+            "deviceId": "46deccf8",
+            "name": "com.Unknova.com.unity.template.mobile2D",
+            "processId": 22524,
             "exited": false
         },
         {
