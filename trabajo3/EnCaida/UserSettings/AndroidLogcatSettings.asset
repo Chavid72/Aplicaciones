@@ -2,70 +2,40 @@
     "m_SelectedDeviceId": "46deccf8",
     "m_SelectedProcess": {
         "deviceId": "46deccf8",
-        "name": "com.Unknova.com.unity.template.mobile2D",
-        "processId": 22524,
+        "name": "com.Unknova.FallOff",
+        "processId": 27358,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownProcessesForSerialization": [
         {
             "deviceId": "46deccf8",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 17680,
-            "exited": false
+            "name": "com.Unknova.FallOff",
+            "processId": 16753,
+            "exited": true
         },
         {
             "deviceId": "46deccf8",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 21317,
-            "exited": false
+            "name": "com.Unknova.FallOff",
+            "processId": 19426,
+            "exited": true
         },
         {
             "deviceId": "46deccf8",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 29270,
-            "exited": false
+            "name": "com.Unknova.FallOff",
+            "processId": 22338,
+            "exited": true
         },
         {
             "deviceId": "46deccf8",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 8296,
-            "exited": false
+            "name": "com.Unknova.FallOff",
+            "processId": 23704,
+            "exited": true
         },
         {
             "deviceId": "46deccf8",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 8591,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 29886,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 9556,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 13724,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 16263,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.com.unity.template.mobile2D",
-            "processId": 22524,
+            "name": "com.Unknova.FallOff",
+            "processId": 27358,
             "exited": false
         },
         {

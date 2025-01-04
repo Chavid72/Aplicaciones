@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
 {
     public TextMeshProUGUI pointsText;
 
-    public int points = 0;
+    public static int points = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,8 @@ public class GameController : MonoBehaviour
     {
         if(collision.tag == "Enemy")
         {
-            points += 10;
+            //points += 10;
+            GameController.points += 10;
             pointsText.text = points.ToString();
         }
     }

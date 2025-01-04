@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
 
         if(health <= 0)
         {
+            PlayerPrefs.SetInt("Puntos", GameController.points); //Guarda en preferencias los puntos.
             SceneManager.LoadScene("LoseScene");
         }
 

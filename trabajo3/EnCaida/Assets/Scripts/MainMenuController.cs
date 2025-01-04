@@ -7,6 +7,7 @@ public class MainMenuController : MonoBehaviour
 {
     public void PlayGame()
     {
+        GameController.points = 0; //Reseteamos los puntos.
         SceneManager.LoadScene("GameScene");
     }
 
