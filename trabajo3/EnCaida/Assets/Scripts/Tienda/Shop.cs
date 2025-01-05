@@ -6,7 +6,7 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     public int monedas;
-    public TextMeshPro monedasText;
+    public TMPro.TextMeshProUGUI monedasText;
 
     public GameObject[] cromas;
     public GameObject[] fondos;
