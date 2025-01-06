@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\LoseSceneController.cs" />
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\Login\AuthenticationManager.cs" />
     <Compile Include="Assets\Scripts\Options.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\MainMenuController.cs" />
@@ -91,7 +92,6 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
@@ -976,6 +976,10 @@
     <ProjectReference Include="Unity.Mathematics.Player.csproj">
       <Project>{3FAE559C-EF4A-3FB9-5A36-A0C6E5E98927}</Project>
       <Name>Unity.Mathematics.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Services.CloudSave.Player.csproj">
+      <Project>{485BA8D6-281C-545E-A1C3-61B7963C8D74}</Project>
+      <Name>Unity.Services.CloudSave.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
       <Project>{C2E7D135-9721-6E5F-9DA3-2F3FBE5F39AA}</Project>
