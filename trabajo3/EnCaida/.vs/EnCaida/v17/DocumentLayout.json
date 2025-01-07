@@ -7,20 +7,20 @@
       "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\losescenecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5BCE52C-7068-9BED-2FB0-7E7BD2C3AEBE}|Unity.Services.CloudSave.csproj|c:\\users\\torne\\desktop\\trabajos\\aplicaciones moviles\\aplicaciones\\trabajo3\\encaida\\library\\packagecache\\com.unity.services.cloudsave@3.2.2\\runtime\\cloudsaveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5BCE52C-7068-9BED-2FB0-7E7BD2C3AEBE}|Unity.Services.CloudSave.csproj|solutionrelative:library\\packagecache\\com.unity.services.cloudsave@3.2.2\\runtime\\cloudsaveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\login\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\login\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\login\\authenticationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\login\\authenticationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\login\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\login\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D5BCE52C-7068-9BED-2FB0-7E7BD2C3AEBE}|Unity.Services.CloudSave.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\library\\packagecache\\com.unity.services.cloudsave@3.2.2\\runtime\\cloudsaveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5BCE52C-7068-9BED-2FB0-7E7BD2C3AEBE}|Unity.Services.CloudSave.csproj|solutionrelative:library\\packagecache\\com.unity.services.cloudsave@3.2.2\\runtime\\cloudsaveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\mainmenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,7 +62,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CloudSaveService.cs",
               "DocumentMoniker": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Library\\PackageCache\\com.unity.services.cloudsave@3.2.2\\Runtime\\CloudSaveService.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.services.cloudsave@3.2.2\\Runtime\\CloudSaveService.cs",
@@ -70,12 +70,11 @@
               "RelativeToolTip": "Library\\PackageCache\\com.unity.services.cloudsave@3.2.2\\Runtime\\CloudSaveService.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAQwBwAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-07T10:24:59.619Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-07T10:24:59.619Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "AuthenticationManager.cs",
               "DocumentMoniker": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\Login\\AuthenticationManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Login\\AuthenticationManager.cs",
@@ -83,8 +82,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Login\\AuthenticationManager.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAABEAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T15:15:46.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-06T15:15:46.636Z"
             },
             {
               "$type": "Document",
@@ -94,14 +92,14 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\LoseSceneController.cs",
               "ToolTip": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\LoseSceneController.cs",
               "RelativeToolTip": "Assets\\Scripts\\LoseSceneController.cs",
-              "ViewState": "AQIAAGQAAAAAAAAAAAAIwHgAAAArAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwIUAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-04T16:48:33.742Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "GameController.cs",
               "DocumentMoniker": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\GameController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameController.cs",
@@ -109,8 +107,7 @@
               "RelativeToolTip": "Assets\\Scripts\\GameController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T18:22:05.282Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-30T18:22:05.282Z"
             },
             {
               "$type": "Document",
@@ -126,13 +123,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\Login\\LoginController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Login\\LoginController.cs",
               "ToolTip": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\Login\\LoginController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Login\\LoginController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAUAAAAzAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowAUAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-02T14:30:50.394Z"
             },

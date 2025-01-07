@@ -20,6 +20,11 @@ public class LoseSceneController : MonoBehaviour
     {
         points = GameController.points;
         pointsText.text = "Points: " + points;
+
+        data.Add("MejorPuntaje0", 0);
+        data.Add("MejorPuntaje1", 0);
+        data.Add("MejorPuntaje2", 0);
+
         LoadData();
         // Guardar el nuevo mejor puntaje si aplica y obtener el índice del puntaje batido.
         int indiceBatido = GuardarMejorPuntaje(points);
@@ -101,67 +106,33 @@ public class LoseSceneController : MonoBehaviour
 
     public async void LoadData()
     {
-        
-        var keysToLoad = new HashSet<string>()
-        {
-            "MejorPuntaje0",
-            "MejorPuntaje1",
-            "MejorPuntaje2",
-        };
+
         Debug.Log("Te imprimo el mejor puntaje !!!!!");
-        /*
-        foreach (var key in keysToLoad) 
-        {
-            Debug.Log($"{key}");
-        }
-        */
 
-        var loadedData = await CloudSaveService.Instance.Data.Player.LoadAsync(keysToLoad);
-        var punt0 = loadedData["MejorPuntaje0"];
-        Debug.Log("1er Puntaje: " + punt0);
-        foreach (var key in loadedData)
+        var playerData = await CloudSaveService.Instance.Data.Player.LoadAsync(new HashSet<string> {
+          "MejorPuntaje0", "MejorPuntaje1", "MejorPuntaje2"
+        });
+
+        if (playerData.TryGetValue("MejorPuntaje0", out var firstKey))
         {
-            Debug.Log($"{key}");
+            Debug.Log($"firstKeyName value: {firstKey.Value.GetAs<int>()}");
+            data["MejorPuntaje0"] = firstKey.Value.GetAs<int>();
+            mejoresPuntajes[0] = firstKey.Value.GetAs<int>();
         }
 
-        /*
-        for (int i = 0; i < mejoresPuntajes.Length; i++) 
+        if (playerData.TryGetValue("MejorPuntaje1", out var secondKey))
         {
-            mejoresPuntajes[i] = loadedData["MejorPuntaje" + i].GetHashCode();
+            Debug.Log($"secondKey value: {secondKey.Value.GetAs<int>()}");
+            data["MejorPuntaje1"] = secondKey.Value.GetAs<int>();
+            mejoresPuntajes[1] = secondKey.Value.GetAs<int>();
         }
-        */
 
-        var mejorPuntj0 = loadedData["MejorPuntaje0"];
-        
-        Debug.Log(mejorPuntj0);
-
-
-        /*
-        var playerData = await CloudSaveService.Instance.Data.Player.LoadAsync(new HashSet<string> { "keyName" });
-        for (int i = 0;i < 3; i++)
+        if (playerData.TryGetValue("MejorPuntaje2", out var thirdKey))
         {
-            playerData = await CloudSaveService.Instance.Data.Player.LoadAsync(new HashSet<string> { "MejorPuntaje" + i });
-            if (playerData.TryGetValue("MejorPuntaje" + i, out var keyName))
-            {
-                data["MejorPuntaje" + i] = keyName.Value.GetAs<string>();
-                Debug.Log($"keyName: {keyName.Value.GetAs<string>()}");
-            }
+            Debug.Log($"thirdKey value: {thirdKey.Value.GetAs<int>()}");
+            data["MejorPuntaje2"] = thirdKey.Value.GetAs<int>();
+            mejoresPuntajes[2] = thirdKey.Value.GetAs<int>();
         }
-        */
-
-
-
-
-        //var playerData = await CloudSaveService.Instance.Data.Player.LoadAsync(new HashSet<string> { "MejorPuntaje1" });
-
-        //debug_text.text = playerData.Values.ToString();
-        //debug_text.text = playerData["MejorPuntaje1"].ToString();
-        /*
-        if (playerData.TryGetValue("keyName", out var keyName))
-        {
-            Debug.Log($"keyName: {keyName.Value.GetAs<string>()}");
-            debug_text.text = ($"keyName: {keyName.Value.GetAs<string>()}");
-        }
-        */
+        debug_text.text = "" + data["MejorPuntaje0"];
     }
 }
