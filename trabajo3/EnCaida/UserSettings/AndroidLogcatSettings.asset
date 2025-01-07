@@ -3,7 +3,11 @@
     "m_SelectedProcess": {
         "deviceId": "46deccf8",
         "name": "com.Unknova.FallOff",
+<<<<<<< Updated upstream
         "processId": 21481,
+=======
+        "processId": 17479,
+>>>>>>> Stashed changes
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -69,12 +73,15 @@
             "exited": false
         },
         {
+<<<<<<< Updated upstream
             "deviceId": "46deccf8",
             "name": "com.Unknova.FallOff",
             "processId": 21481,
             "exited": false
         },
         {
+=======
+>>>>>>> Stashed changes
             "deviceId": "1dc7b6bd",
             "name": "com.miui.home",
             "processId": 2744,
