@@ -1,90 +1,35 @@
 {
     "m_SelectedDeviceId": "46deccf8",
     "m_SelectedProcess": {
-        "deviceId": "46deccf8",
-        "name": "com.Unknova.FallOff",
-<<<<<<< Updated upstream
-        "processId": 21481,
-=======
-        "processId": 17479,
->>>>>>> Stashed changes
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownProcessesForSerialization": [
         {
             "deviceId": "46deccf8",
+            "name": "com.Unknova.FallOff",
+            "processId": 7106,
+            "exited": true
+        },
+        {
+            "deviceId": "46deccf8",
+            "name": "com.Unknova.FallOff",
+            "processId": 10536,
+            "exited": true
+        },
+        {
+            "deviceId": "46deccf8",
+            "name": "com.Unknova.FallOff",
+            "processId": 13364,
+            "exited": true
+        },
+        {
+            "deviceId": "46deccf8",
             "name": "com.sec.android.app.launcher",
             "processId": 15659,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.whatsapp",
-            "processId": 12247,
-            "exited": true
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 18679,
-            "exited": true
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 21598,
-            "exited": true
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 26963,
-            "exited": true
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 5435,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 8482,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 11531,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 14240,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 17479,
-            "exited": false
-        },
-        {
-<<<<<<< Updated upstream
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 21481,
-            "exited": false
-        },
-        {
-=======
->>>>>>> Stashed changes
-            "deviceId": "1dc7b6bd",
-            "name": "com.miui.home",
-            "processId": 2744,
             "exited": false
         }
     ],

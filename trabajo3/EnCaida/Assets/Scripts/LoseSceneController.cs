@@ -8,7 +8,7 @@ using Unity.Services.CloudSave;
 public class LoseSceneController : MonoBehaviour
 {
     public TextMeshProUGUI pointsText;
-    public TextMeshProUGUI debug_text;
+    //public TextMeshProUGUI debug_text;
     public int points;
 
     public TextMeshProUGUI mejoresPuntajesText;
@@ -20,10 +20,6 @@ public class LoseSceneController : MonoBehaviour
     {
         points = GameController.points;
         pointsText.text = "Points: " + points;
-
-        data.Add("MejorPuntaje0", 0);
-        data.Add("MejorPuntaje1", 0);
-        data.Add("MejorPuntaje2", 0);
 
         LoadData();
         // Guardar el nuevo mejor puntaje si aplica y obtener el índice del puntaje batido.
@@ -133,6 +129,6 @@ public class LoseSceneController : MonoBehaviour
             data["MejorPuntaje2"] = thirdKey.Value.GetAs<int>();
             mejoresPuntajes[2] = thirdKey.Value.GetAs<int>();
         }
-        debug_text.text = "" + data["MejorPuntaje0"];
+        //debug_text.text = "" + data["MejorPuntaje0"];
     }
 }
