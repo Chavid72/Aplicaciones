@@ -1306,17 +1306,17 @@
       <Project>{677AD384-E95A-698B-3537-0F4381452191}</Project>
       <Name>Unity.VisualScripting.Core.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.AdaptivePerformance.Samsung.Android.Editor.csproj">
-      <Project>{8FE4345F-FDCD-AE10-EB32-CE8C9E95F51D}</Project>
-      <Name>Unity.AdaptivePerformance.Samsung.Android.Editor</Name>
+    <ProjectReference Include="Unity.Services.CloudSave.Editor.csproj">
+      <Project>{05B7B0AB-D8CF-4332-D16E-80CF96A15C37}</Project>
+      <Name>Unity.Services.CloudSave.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
       <Project>{FF2308EC-7630-16B2-EDFD-8BDE44FAA2B4}</Project>
       <Name>Unity.2D.Tilemap.Extras</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Services.CloudSave.Editor.csproj">
-      <Project>{05B7B0AB-D8CF-4332-D16E-80CF96A15C37}</Project>
-      <Name>Unity.Services.CloudSave.Editor</Name>
+    <ProjectReference Include="Unity.AdaptivePerformance.Samsung.Android.Editor.csproj">
+      <Project>{8FE4345F-FDCD-AE10-EB32-CE8C9E95F51D}</Project>
+      <Name>Unity.AdaptivePerformance.Samsung.Android.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.AdaptivePerformance.Profiler.Editor.csproj">
       <Project>{0849129D-3B1C-9E69-92BE-47B4016FFA4F}</Project>

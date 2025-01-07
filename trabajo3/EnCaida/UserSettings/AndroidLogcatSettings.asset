@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "46deccf8",
     "m_SelectedProcess": {
-        "deviceId": "46deccf8",
-        "name": "com.Unknova.FallOff",
-        "processId": 21598,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -13,18 +13,6 @@
             "name": "com.sec.android.app.launcher",
             "processId": 15659,
             "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 10213,
-            "exited": true
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 13545,
-            "exited": true
         },
         {
             "deviceId": "46deccf8",
@@ -42,7 +30,13 @@
             "deviceId": "46deccf8",
             "name": "com.Unknova.FallOff",
             "processId": 21598,
-            "exited": false
+            "exited": true
+        },
+        {
+            "deviceId": "46deccf8",
+            "name": "com.Unknova.FallOff",
+            "processId": 26963,
+            "exited": true
         },
         {
             "deviceId": "1dc7b6bd",

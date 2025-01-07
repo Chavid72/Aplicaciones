@@ -101,6 +101,42 @@ public class LoseSceneController : MonoBehaviour
 
     public async void LoadData()
     {
+        
+        var keysToLoad = new HashSet<string>()
+        {
+            "MejorPuntaje0",
+            "MejorPuntaje1",
+            "MejorPuntaje2",
+        };
+        Debug.Log("Te imprimo el mejor puntaje !!!!!");
+        /*
+        foreach (var key in keysToLoad) 
+        {
+            Debug.Log($"{key}");
+        }
+        */
+
+        var loadedData = await CloudSaveService.Instance.Data.Player.LoadAsync(keysToLoad);
+        var punt0 = loadedData["MejorPuntaje0"];
+        Debug.Log("1er Puntaje: " + punt0);
+        foreach (var key in loadedData)
+        {
+            Debug.Log($"{key}");
+        }
+
+        /*
+        for (int i = 0; i < mejoresPuntajes.Length; i++) 
+        {
+            mejoresPuntajes[i] = loadedData["MejorPuntaje" + i].GetHashCode();
+        }
+        */
+
+        var mejorPuntj0 = loadedData["MejorPuntaje0"];
+        
+        Debug.Log(mejorPuntj0);
+
+
+        /*
         var playerData = await CloudSaveService.Instance.Data.Player.LoadAsync(new HashSet<string> { "keyName" });
         for (int i = 0;i < 3; i++)
         {
@@ -111,7 +147,7 @@ public class LoseSceneController : MonoBehaviour
                 Debug.Log($"keyName: {keyName.Value.GetAs<string>()}");
             }
         }
-
+        */
 
 
 
@@ -119,7 +155,7 @@ public class LoseSceneController : MonoBehaviour
         //var playerData = await CloudSaveService.Instance.Data.Player.LoadAsync(new HashSet<string> { "MejorPuntaje1" });
 
         //debug_text.text = playerData.Values.ToString();
-        debug_text.text = playerData["MejorPuntaje1"].ToString();
+        //debug_text.text = playerData["MejorPuntaje1"].ToString();
         /*
         if (playerData.TryGetValue("keyName", out var keyName))
         {
