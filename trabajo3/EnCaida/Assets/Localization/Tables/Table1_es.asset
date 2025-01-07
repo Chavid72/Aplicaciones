@@ -98,6 +98,10 @@ MonoBehaviour:
     m_Localized: "Serrar Sesi\xF3n"
     m_Metadata:
       m_Items: []
+  - m_Id: 3965853048184832
+    m_Localized: Has Perdido
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

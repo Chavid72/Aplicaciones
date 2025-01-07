@@ -98,6 +98,10 @@ MonoBehaviour:
     m_Localized: Log Out
     m_Metadata:
       m_Items: []
+  - m_Id: 3965853048184832
+    m_Localized: You Lose
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
