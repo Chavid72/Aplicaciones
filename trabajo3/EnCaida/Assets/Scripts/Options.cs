@@ -18,8 +18,13 @@ public class Options : MonoBehaviour
     [SerializeField] AudioMixer effectMixer;
 
     [SerializeField] Slider ambientSlider;
-    [SerializeField] Slider effectSlider; 
-   
+    [SerializeField] Slider effectSlider;
+
+    [SerializeField] Image background;
+    [SerializeField] Sprite backgroundDark;
+    [SerializeField] Sprite backgroundClear;
+
+
 
 
     void Start()
@@ -36,7 +41,7 @@ public class Options : MonoBehaviour
         setEffectsVolume(volume2);
         effectSlider.value = volume2;
 
-        selectedMode(PlayerPrefs.GetInt("Mode"));
+        selectedMode(PlayerPrefs.GetInt("Mode",0));
     }
 
     public void setLanguage(int ID)
@@ -67,11 +72,13 @@ public class Options : MonoBehaviour
         {
             clearModeSelected.SetActive(true);
             darkModeSelected.SetActive(false);
+            background.sprite = backgroundClear;
         }
         else
         {
             clearModeSelected.SetActive(false);
             darkModeSelected.SetActive(true);
+            background.sprite = backgroundDark;
         }
 
     }
