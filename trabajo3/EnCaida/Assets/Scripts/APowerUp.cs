@@ -16,6 +16,10 @@ public abstract class APowerUp : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.up * speed * Time.deltaTime;
+        if (transform.position.y > 6f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SetSpeed(float newspeed)

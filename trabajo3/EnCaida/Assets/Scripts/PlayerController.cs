@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour
 
     public int health = 3;
     public float wind = 0;
+    public bool shield = false;
+    public int waitShield = 10;
+
+    Coroutine shieldC;
 
     public CanvasController UIController;
 
@@ -63,6 +67,7 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (shield) return;
         health -= damage;
         Debug.Log("Player Health: " + health);
 
@@ -85,6 +90,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void StartShield()
+    {
+        shield = true;
+        spriteRenderer.color = Color.blue;
+        if (shieldC == null)
+        {
+            shieldC = StartCoroutine(Shield());
+        }
+
+        else
+        {
+            StopCoroutine(shieldC);
+            shieldC = StartCoroutine(Shield());
+        }
+    }
+
     IEnumerator BlinkRed()
     {
         for (int i = 0; i < blinkCount; i++)
@@ -101,5 +122,12 @@ public class PlayerController : MonoBehaviour
             // Esperar otro tiempo corto
             yield return new WaitForSeconds(blinkDuration);
         }
+    }
+
+    IEnumerator Shield()
+    {
+        yield return new WaitForSeconds(waitShield);
+        spriteRenderer.color = originalColor;
+        shield = false;
     }
 }
