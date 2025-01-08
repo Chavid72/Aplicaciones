@@ -13,9 +13,32 @@ public class EnemySpawner : MonoBehaviour
     public float startSpeed = 1f; // Velocidad inicial de los enemigos
     public float speedIncreaseRate = 0.1f; // Incremento de velocidad de los enemigos
 
+    public List<int> levels = new List<int>();
+    public float waitLevel = 1f;
+    public int enemiesDodge = 0;
+
     private float currentSpeed; // Velocidad actual de los enemigos
     private float currentSpawnInterval; // Intervalo actual de spawn
+    private int enemiesInLevel = 0;
+    public int currenLevel = 0;
+    public bool maxLevel = false;
 
+
+    private static EnemySpawner instance;
+
+    public static EnemySpawner Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
+
+    private void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -35,9 +58,44 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             SpawnEnemy();
+            enemiesInLevel++;
             yield return new WaitForSeconds(currentSpawnInterval);
-            AdjustDifficultyOverTime();
+            if (!maxLevel)
+            {
+                if (enemiesInLevel >= levels[currenLevel])
+                {
+                    enemiesInLevel = 0;
+                    break;
+                }
+            }
+            //AdjustDifficultyOverTime();
         }
+    }
+
+    public void StartLevel()
+    {
+        StartCoroutine(NextLevel());
+    }
+
+    public IEnumerator NextLevel()
+    {
+        int i = 0;
+
+        while (i < 3)
+        {
+            yield return new WaitForSeconds(waitLevel);
+            i++;
+        }
+        if (currenLevel < levels.Count - 1)
+        {
+            currenLevel++;
+
+        }
+        else maxLevel = true;
+        enemiesDodge = 0;
+        AdjustDifficultyOverTime();
+        Debug.Log("Entre");
+        StartCoroutine(SpawnEnemies());
     }
     void SpawnEnemy()
     {

@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private float speed = 1f;
+    [SerializeField] private float speed = 1f;
+    private bool esquivado = false;
     public int damage = 1;
 
     public ParticleSystem particles;
@@ -26,6 +27,22 @@ public class EnemyMovement : MonoBehaviour
         // Mover al enemigo hacia arriba
         transform.position += Vector3.up * speed * Time.deltaTime;
 
+
+        if (!EnemySpawner.Instance.maxLevel)
+        {
+            if (!esquivado && transform.position.y > 3f)
+            {
+                esquivado = true;
+                EnemySpawner.Instance.enemiesDodge++;
+                Debug.Log("dodge " + EnemySpawner.Instance.enemiesDodge);
+                Debug.Log("restantes " + EnemySpawner.Instance.levels[EnemySpawner.Instance.currenLevel]);
+                if (EnemySpawner.Instance.enemiesDodge >= EnemySpawner.Instance.levels[EnemySpawner.Instance.currenLevel])
+                {
+
+                    EnemySpawner.Instance.StartLevel();
+                }
+            }
+        }
         // Destruir el enemigo cuando sale de la pantalla
         if (transform.position.y > 6f)
         {
@@ -37,6 +54,20 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+
+            if (!EnemySpawner.Instance.maxLevel)
+            {
+                    esquivado = true;
+                    EnemySpawner.Instance.enemiesDodge++;
+                    Debug.Log("dodge " + EnemySpawner.Instance.enemiesDodge);
+                    Debug.Log("restantes " + EnemySpawner.Instance.levels[EnemySpawner.Instance.currenLevel]);
+                    if (EnemySpawner.Instance.enemiesDodge >= EnemySpawner.Instance.levels[EnemySpawner.Instance.currenLevel])
+                    {
+
+                        EnemySpawner.Instance.StartLevel();
+                    }
+                
+            }
             collision.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
             Instantiate(particles, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
