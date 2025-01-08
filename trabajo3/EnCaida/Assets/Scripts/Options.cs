@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
 
 public class Options : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class Options : MonoBehaviour
     [SerializeField] Image background;
     [SerializeField] Sprite backgroundDark;
     [SerializeField] Sprite backgroundClear;
+
+    [SerializeField] Sprite buttonDark; 
+    [SerializeField] Sprite buttonClear; 
+    [SerializeField] List<Button> buttons; 
+    [SerializeField] List<TextMeshProUGUI> buttonsTexts; 
 
 
 
@@ -73,12 +79,32 @@ public class Options : MonoBehaviour
             clearModeSelected.SetActive(true);
             darkModeSelected.SetActive(false);
             background.sprite = backgroundClear;
+            foreach (var b in buttons)
+            {
+                b.image.sprite = buttonClear; 
+            }
+            foreach (var b in buttonsTexts)
+            {
+                b.color = Color.black;
+            }
         }
         else
         {
             clearModeSelected.SetActive(false);
             darkModeSelected.SetActive(true);
             background.sprite = backgroundDark;
+            foreach (var b in buttons)
+            {
+                b.image.sprite = buttonDark;
+            }
+            foreach (var b in buttons)
+            {
+                b.image.sprite = buttonDark;
+            }
+            foreach (var b in buttonsTexts)
+            {
+                b.color = Color.white;
+            }
         }
 
     }

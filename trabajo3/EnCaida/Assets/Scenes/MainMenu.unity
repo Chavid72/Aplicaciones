@@ -222,6 +222,50 @@ PrefabInstance:
       propertyPath: background
       value: 
       objectReference: {fileID: 2019563505}
+    - target: {fileID: 1967023290154264778, guid: ddff3cba06ba6834dbfb44be2c4526f8, type: 3}
+      propertyPath: buttons.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967023290154264778, guid: ddff3cba06ba6834dbfb44be2c4526f8, type: 3}
+      propertyPath: buttons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1478079301}
+    - target: {fileID: 1967023290154264778, guid: ddff3cba06ba6834dbfb44be2c4526f8, type: 3}
+      propertyPath: buttons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1079037230}
+    - target: {fileID: 1967023290154264778, guid: ddff3cba06ba6834dbfb44be2c4526f8, type: 3}
+      propertyPath: buttons.Array.data[2]
+      value: 
+      objectReference: {fileID: 774514771}
+    - target: {fileID: 1967023290154264778, guid: ddff3cba06ba6834dbfb44be2c4526f8, type: 3}
+      propertyPath: buttons.Array.data[3]
+      value: 
+      objectReference: {fileID: 196379209}
+    - target: {fileID: 1967023290154264778, guid: ddff3cba06ba6834dbfb44be2c4526f8, type: 3}
+      propertyPath: buttons.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967023290154264778, guid: ddff3cba06ba6834dbfb44be2c4526f8, type: 3}
+      propertyPath: buttonsTexts.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967023290154264778, guid: ddff3cba06ba6834dbfb44be2c4526f8, type: 3}
+      propertyPath: buttonsTexts.Array.data[0]
+      value: 
+      objectReference: {fileID: 249397233}
+    - target: {fileID: 1967023290154264778, guid: ddff3cba06ba6834dbfb44be2c4526f8, type: 3}
+      propertyPath: buttonsTexts.Array.data[1]
+      value: 
+      objectReference: {fileID: 2080671302}
+    - target: {fileID: 1967023290154264778, guid: ddff3cba06ba6834dbfb44be2c4526f8, type: 3}
+      propertyPath: buttonsTexts.Array.data[2]
+      value: 
+      objectReference: {fileID: 1604015771}
+    - target: {fileID: 1967023290154264778, guid: ddff3cba06ba6834dbfb44be2c4526f8, type: 3}
+      propertyPath: buttonsTexts.Array.data[3]
+      value: 
+      objectReference: {fileID: 330827186}
     - target: {fileID: 3566325147266646482, guid: ddff3cba06ba6834dbfb44be2c4526f8, type: 3}
       propertyPath: m_IsActive
       value: 0
