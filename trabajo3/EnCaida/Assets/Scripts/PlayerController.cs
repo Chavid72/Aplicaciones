@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float maxX = 2.5f; // Limite máximo en X
 
     public int health = 3;
+    public float wind = 0;
 
     public CanvasController UIController;
 
@@ -24,9 +25,19 @@ public class PlayerController : MonoBehaviour
     // Número de parpadeos rápidos
     public int blinkCount = 5;
     ///////////////////////////////////////////////
+    private static PlayerController instance;
+
+    public static PlayerController Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
 
     void Start()
     {
+        instance = this;
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
 
@@ -41,7 +52,7 @@ public class PlayerController : MonoBehaviour
         float tilt = Input.acceleration.x;
 
         // Mover el objeto en el eje X basado en la inclinación
-        Vector3 newPosition = transform.position + new Vector3(tilt * speed * Time.deltaTime, 0, 0);
+        Vector3 newPosition = transform.position + new Vector3((tilt * speed * Time.deltaTime) + wind, 0, 0);
 
         // Restringir el movimiento dentro de los límites
         newPosition.x = Mathf.Clamp(newPosition.x, -maxX, maxX);
@@ -63,6 +74,15 @@ public class PlayerController : MonoBehaviour
 
         StartCoroutine(BlinkRed());
         UIController.LoseHealth(damage);
+    }
+
+    public void Health()
+    {
+        if (health < 3)
+        {
+            health += 1;
+            UIController.GainHealth(1);
+        }
     }
 
     IEnumerator BlinkRed()

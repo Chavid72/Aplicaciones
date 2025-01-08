@@ -14,11 +14,13 @@ public class EnemySpawner : MonoBehaviour
     public float speedIncreaseRate = 0.1f; // Incremento de velocidad de los enemigos
 
     public List<int> levels = new List<int>();
+    public List<GameObject> PowerUps = new List<GameObject>();
     public float waitLevel = 1f;
     public int enemiesDodge = 0;
 
     private float currentSpeed; // Velocidad actual de los enemigos
     private float currentSpawnInterval; // Intervalo actual de spawn
+    [SerializeField]private float powerProb = 0.1f;
     private int enemiesInLevel = 0;
     public int currenLevel = 0;
     public bool maxLevel = false;
@@ -58,6 +60,7 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             SpawnEnemy();
+            SpawnPower();
             enemiesInLevel++;
             yield return new WaitForSeconds(currentSpawnInterval);
             if (!maxLevel)
@@ -109,6 +112,23 @@ public class EnemySpawner : MonoBehaviour
         if (enemyMovement != null)
         {
             enemyMovement.SetSpeed(currentSpeed);
+        }
+    }
+
+    void SpawnPower()
+    {
+        if (Random.Range(0f, 1f) < powerProb)
+        {
+            float spawnX = Random.Range(minX, maxX);
+            Vector3 spawnPosition = new Vector3(spawnX, -6f, 0f); // Debajo de la pantalla
+            int idx = Random.Range(0, PowerUps.Count);
+            GameObject power = Instantiate(PowerUps[idx], spawnPosition, Quaternion.identity);
+
+            APowerUp powerUpi = power.GetComponent<APowerUp>();
+            if (powerUpi != null)
+            {
+                powerUpi.SetSpeed(currentSpeed);
+            }
         }
     }
 
