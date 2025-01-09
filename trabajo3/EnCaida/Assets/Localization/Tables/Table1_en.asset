@@ -102,6 +102,10 @@ MonoBehaviour:
     m_Localized: You Lose
     m_Metadata:
       m_Items: []
+  - m_Id: 4660341127192576
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
