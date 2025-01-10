@@ -18,7 +18,8 @@ public class MainMenuController : MonoBehaviour
 
     public void LoadMenu()
     {
-        Time.timeScale = 1.0f; 
+        Time.timeScale = 1.0f;
+        GameController.points = 0; //Reseteamos los puntos.
         SceneManager.LoadScene("MainMenu");
     }
 

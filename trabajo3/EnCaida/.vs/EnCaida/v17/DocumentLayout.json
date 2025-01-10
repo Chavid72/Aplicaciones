@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|c:\\users\\torne\\desktop\\trabajos\\aplicaciones moviles\\aplicaciones\\trabajo3\\encaida\\assets\\scripts\\losescenecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\losescenecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|c:\\users\\torne\\desktop\\trabajos\\aplicaciones moviles\\aplicaciones\\trabajo3\\encaida\\assets\\scripts\\mainmenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\mainmenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\losescenecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\losescenecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4ED103FC-8253-3B26-73DD-8B654213C44B}|Assembly-CSharp.csproj|C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
@@ -74,16 +74,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "LoseSceneController.cs",
               "DocumentMoniker": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\LoseSceneController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LoseSceneController.cs",
               "ToolTip": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\LoseSceneController.cs",
               "RelativeToolTip": "Assets\\Scripts\\LoseSceneController.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAQwFIAAAAAAAAA",
+              "ViewState": "AQIAACAAAAAAAAAAAAAxwFIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T16:48:33.742Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T16:48:33.742Z"
             },
             {
               "$type": "Document",
@@ -171,15 +170,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainMenuController.cs",
               "DocumentMoniker": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\MainMenuController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenuController.cs",
               "ToolTip": "C:\\Users\\torne\\Desktop\\Trabajos\\Aplicaciones Moviles\\Aplicaciones\\trabajo3\\EnCaida\\Assets\\Scripts\\MainMenuController.cs",
               "RelativeToolTip": "Assets\\Scripts\\MainMenuController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABoAAAAsAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T09:29:33.239Z"
+              "WhenOpened": "2024-12-23T09:29:33.239Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
