@@ -1,35 +1,65 @@
 {
     "m_SelectedDeviceId": "46deccf8",
     "m_SelectedProcess": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "46deccf8",
+        "name": "com.Unknova.FallOff",
+        "processId": 15974,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownProcessesForSerialization": [
         {
             "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 7106,
-            "exited": true
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 10536,
-            "exited": true
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 13364,
-            "exited": true
-        },
-        {
-            "deviceId": "46deccf8",
             "name": "com.sec.android.app.launcher",
             "processId": 15659,
+            "exited": false
+        },
+        {
+            "deviceId": "46deccf8",
+            "name": "com.sec.android.app.sbrowser",
+            "processId": 30745,
+            "exited": true
+        },
+        {
+            "deviceId": "46deccf8",
+            "name": "com.Unknova.FallOff",
+            "processId": 562,
+            "exited": true
+        },
+        {
+            "deviceId": "46deccf8",
+            "name": "com.Unknova.FallOff",
+            "processId": 2246,
+            "exited": true
+        },
+        {
+            "deviceId": "46deccf8",
+            "name": "com.Unknova.FallOff",
+            "processId": 5833,
+            "exited": true
+        },
+        {
+            "deviceId": "46deccf8",
+            "name": "com.Unknova.FallOff",
+            "processId": 8279,
+            "exited": false
+        },
+        {
+            "deviceId": "46deccf8",
+            "name": "com.Unknova.FallOff",
+            "processId": 10592,
+            "exited": false
+        },
+        {
+            "deviceId": "46deccf8",
+            "name": "com.Unknova.FallOff",
+            "processId": 13806,
+            "exited": false
+        },
+        {
+            "deviceId": "46deccf8",
+            "name": "com.Unknova.FallOff",
+            "processId": 15974,
             "exited": false
         }
     ],

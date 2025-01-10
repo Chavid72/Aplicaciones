@@ -8,7 +8,7 @@ using Unity.Services.CloudSave;
 public class LoseSceneController : MonoBehaviour
 {
     public TextMeshProUGUI pointsText;
-    //public TextMeshProUGUI debug_text;
+    public TextMeshProUGUI debug_text;
     public int points;
 
     public TextMeshProUGUI mejoresPuntajesText;
@@ -24,22 +24,23 @@ public class LoseSceneController : MonoBehaviour
         LoadData();
         // Guardar el nuevo mejor puntaje si aplica y obtener el índice del puntaje batido.
         int indiceBatido = GuardarMejorPuntaje(points);
-
+        /*
         // Mostrar los mejores puntajes.
-        string mejoresPuntajes = "";
+        string mejoresPuntajest = "";
         for (int i = 0; i < 3; i++)
         {
-            int puntaje = PlayerPrefs.GetInt("MejorPuntaje" + i, 0);
+            //int puntaje = PlayerPrefs.GetInt("MejorPuntaje" + i, 0);
             if (i == indiceBatido)
             {
-                mejoresPuntajes += $"<size=36><color=orange>{i + 1}. {puntaje}</color></size>\n";
+                mejoresPuntajest += $"<size=36><color=orange>{i + 1}. {mejoresPuntajes[i]}</color></size>\n";
             }
             else
             {
-                mejoresPuntajes += $"{i + 1}. {puntaje}\n";
+                mejoresPuntajest += $"{i + 1}. {mejoresPuntajes[i]}\n";
             }
         }
-        mejoresPuntajesText.text = mejoresPuntajes;
+        mejoresPuntajesText.text = mejoresPuntajest;
+        */
     }
 
     int GuardarMejorPuntaje(int nuevoPuntaje)
@@ -50,7 +51,7 @@ public class LoseSceneController : MonoBehaviour
         // Cargar los mejores puntajes actuales.
         for (int i = 0; i < 3; i++)
         {
-            mejoresPuntajes[i] = PlayerPrefs.GetInt("MejorPuntaje" + i, 0);
+            //mejoresPuntajes[i] = PlayerPrefs.GetInt("MejorPuntaje" + i, 0);
         }
         //LoadData();
 
@@ -70,11 +71,17 @@ public class LoseSceneController : MonoBehaviour
                 break;
             }
         }
-
+        /* ESTE ES EL PROBLEMAAAAAAAAAAAAAAAAA
+        for(int i = 0;i < 3; i++)
+        {
+            data["MejorPuntaje" + i] = mejoresPuntajes[i];
+        }
+        */
+        /*
         // Guardar los mejores puntajes actualizados en PlayerPrefs.
         for (int i = 0; i < 3; i++)
         {
-            PlayerPrefs.SetInt("MejorPuntaje" + i, mejoresPuntajes[i]);
+            //PlayerPrefs.SetInt("MejorPuntaje" + i, mejoresPuntajes[i]);
 
             if (data.ContainsKey("MejorPuntaje" + i))
             {
@@ -87,9 +94,9 @@ public class LoseSceneController : MonoBehaviour
                 data.Add("MejorPuntaje" + i, mejoresPuntajes[i]);
             }
         }
-
+        */
         // Guardar los cambios en PlayerPrefs.
-        PlayerPrefs.Save();
+        //PlayerPrefs.Save();
 
         SaveData();
 
@@ -129,6 +136,6 @@ public class LoseSceneController : MonoBehaviour
             data["MejorPuntaje2"] = thirdKey.Value.GetAs<int>();
             mejoresPuntajes[2] = thirdKey.Value.GetAs<int>();
         }
-        //debug_text.text = "" + data["MejorPuntaje0"];
+        debug_text.text = "" + data["MejorPuntaje0"] + " array " + mejoresPuntajes[0];
     }
 }

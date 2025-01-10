@@ -446,6 +446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsText: {fileID: 904599741}
+  debug_text: {fileID: 1403719634}
   points: 0
   mejoresPuntajesText: {fileID: 1940555100}
 --- !u!4 &542202365
@@ -1115,7 +1116,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1403719632
 RectTransform:
   m_ObjectHideFlags: 0

@@ -22,6 +22,11 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void LoadRanking()
+    {
+        SceneManager.LoadScene("LoseScene");
+    }
+
     // Método para salir del juego
     public void ExitGame()
     {
