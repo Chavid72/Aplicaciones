@@ -22,86 +22,9 @@ public class LoseSceneController : MonoBehaviour
         pointsText.text = "Points: " + points;
 
         LoadData();
-        // Guardar el nuevo mejor puntaje si aplica y obtener el índice del puntaje batido.
-        int indiceBatido = GuardarMejorPuntaje(points);
-        /*
-        // Mostrar los mejores puntajes.
-        string mejoresPuntajest = "";
-        for (int i = 0; i < 3; i++)
-        {
-            //int puntaje = PlayerPrefs.GetInt("MejorPuntaje" + i, 0);
-            if (i == indiceBatido)
-            {
-                mejoresPuntajest += $"<size=36><color=orange>{i + 1}. {mejoresPuntajes[i]}</color></size>\n";
-            }
-            else
-            {
-                mejoresPuntajest += $"{i + 1}. {mejoresPuntajes[i]}\n";
-            }
-        }
-        mejoresPuntajesText.text = mejoresPuntajest;
-        */
+
     }
 
-    int GuardarMejorPuntaje(int nuevoPuntaje)
-    {
-        //int[] mejoresPuntajes = new int[3];
-        int indiceBatido = -1;
-
-        // Cargar los mejores puntajes actuales.
-        for (int i = 0; i < 3; i++)
-        {
-            //mejoresPuntajes[i] = PlayerPrefs.GetInt("MejorPuntaje" + i, 0);
-        }
-        //LoadData();
-
-        // Comparar el nuevo puntaje con los mejores.
-        for (int i = 0; i < 3; i++)
-        {
-            if (nuevoPuntaje > mejoresPuntajes[i])
-            {
-                // Desplazar los puntajes hacia abajo.
-                for (int j = 2; j > i; j--)
-                {
-                    mejoresPuntajes[j] = mejoresPuntajes[j - 1];
-                }
-                // Insertar el nuevo puntaje.
-                mejoresPuntajes[i] = nuevoPuntaje;
-                indiceBatido = i;
-                break;
-            }
-        }
-        /* ESTE ES EL PROBLEMAAAAAAAAAAAAAAAAA
-        for(int i = 0;i < 3; i++)
-        {
-            data["MejorPuntaje" + i] = mejoresPuntajes[i];
-        }
-        */
-        /*
-        // Guardar los mejores puntajes actualizados en PlayerPrefs.
-        for (int i = 0; i < 3; i++)
-        {
-            //PlayerPrefs.SetInt("MejorPuntaje" + i, mejoresPuntajes[i]);
-
-            if (data.ContainsKey("MejorPuntaje" + i))
-            {
-                // Actualizar el valor si la clave ya existe
-                data["MejorPuntaje" + i] = mejoresPuntajes[i];
-            }
-            else
-            {
-                // Agregar una nueva clave si no existe
-                data.Add("MejorPuntaje" + i, mejoresPuntajes[i]);
-            }
-        }
-        */
-        // Guardar los cambios en PlayerPrefs.
-        //PlayerPrefs.Save();
-
-        SaveData();
-
-        return indiceBatido; // Devolver el índice del puntaje batido.
-    }
     public async void SaveData()
     {
         await CloudSaveService.Instance.Data.Player.SaveAsync(data);
@@ -112,6 +35,7 @@ public class LoseSceneController : MonoBehaviour
 
         Debug.Log("Te imprimo el mejor puntaje !!!!!");
 
+        // Cargo los puntajes de la nube
         var playerData = await CloudSaveService.Instance.Data.Player.LoadAsync(new HashSet<string> {
           "MejorPuntaje0", "MejorPuntaje1", "MejorPuntaje2"
         });
@@ -137,5 +61,36 @@ public class LoseSceneController : MonoBehaviour
             mejoresPuntajes[2] = thirdKey.Value.GetAs<int>();
         }
         debug_text.text = "" + data["MejorPuntaje0"] + " array " + mejoresPuntajes[0];
+
+        // Comparar el nuevo puntaje con los mejores.
+        for (int i = 0; i < 3; i++)
+        {
+            if (points > mejoresPuntajes[i])
+            {
+                // Desplazar los puntajes hacia abajo.
+                for (int j = 2; j > i; j--)
+                {
+                    mejoresPuntajes[j] = mejoresPuntajes[j - 1];
+                    data["MejorPuntaje" + j] = mejoresPuntajes[j];
+                }
+                // Insertar el nuevo puntaje.
+                mejoresPuntajes[i] = points;
+                data["MejorPuntaje" + i] = points;
+                //indiceBatido = i;
+                break;
+            }
+        }
+
+        //Guardo puntajes
+        SaveData();
+
+        // Mostrar los mejores puntajes.
+        string mejoresPuntajest = "";
+        for (int i = 0; i < 3; i++)
+        {
+            mejoresPuntajest += $"{i + 1}. {mejoresPuntajes[i]}\n";
+        }
+        mejoresPuntajesText.text = mejoresPuntajest;
+        
     }
 }
