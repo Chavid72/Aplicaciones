@@ -4,6 +4,7 @@ using Unity.Services.Authentication;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UILogin : MonoBehaviour
 {
@@ -23,11 +24,12 @@ public class UILogin : MonoBehaviour
 
     private void LoginController_OnSignedIn(PlayerInfo playerInfo, string playerName)
     {
-        loginPanel.gameObject.SetActive(false);
-        userPanel.gameObject.SetActive(true);
+        //loginPanel.gameObject.SetActive(false);
+        //userPanel.gameObject.SetActive(true);
 
         userIDText.text = $"id_{playerInfo.Id} " + " \n Player name: " + playerName;
         Debug.Log(playerName);
+        SceneManager.LoadScene("MainMenu");
     }
 
     private async void LoginButtonPressed()

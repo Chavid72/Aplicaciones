@@ -28,6 +28,11 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("LoseScene");
     }
 
+    public void LoadShop()
+    {
+        SceneManager.LoadScene("Shop");
+    }
+
     // Método para salir del juego
     public void ExitGame()
     {
