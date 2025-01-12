@@ -27,6 +27,7 @@ public class Shop : MonoBehaviour
 
     public void ComprarMonedas(int cantidad)
     {
+        PlaySoundButton();
         monedas += cantidad;
         GuardarDatos();
         ActualizarInterfaz();
@@ -37,6 +38,7 @@ public class Shop : MonoBehaviour
     {
         if (index < cromas.Length && index < preciosCromas.Length)
         {
+            PlaySoundButton();
             int precio = preciosCromas[index];
 
             if (monedas >= precio)
@@ -97,6 +99,11 @@ public class Shop : MonoBehaviour
         PlayerPrefs.SetInt("Monedas", monedas);
         PlayerPrefs.SetInt("Croma", cromaActual);
         PlayerPrefs.Save();
+    }
+
+    public void PlaySoundButton()
+    {
+        AudioManager.PlaySound(SoundType.MenuBotones, 1f);
     }
 
 }

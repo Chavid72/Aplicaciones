@@ -37,6 +37,7 @@ public abstract class APowerUp : MonoBehaviour
 
     public virtual void Interaction()
     {
+        AudioManager.PlaySound(SoundType.PowerUp, 1f);
         Destroy(gameObject);
     }
 }

@@ -70,6 +70,7 @@ public class EnemyMovement : MonoBehaviour
             }
             collision.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
             Instantiate(particles, transform.position, Quaternion.identity);
+            AudioManager.PlaySound(SoundType.Globo, 1);
             Destroy(this.gameObject);
         }
     }

@@ -23,10 +23,17 @@ public class CreditsController : MonoBehaviour
     }
     public void OpenNestorWeb()
     {
+        PlayButtonSound();
         Application.OpenURL(NestorWeb);
     }
     public void OpenCrisWeb()
     {
+        PlayButtonSound();
         Application.OpenURL(CrisWeb);
+    }
+
+    public void PlayButtonSound()
+    {
+        AudioManager.PlaySound(SoundType.MenuBotones, 1f);
     }
 }

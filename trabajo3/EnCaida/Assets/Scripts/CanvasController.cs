@@ -33,6 +33,7 @@ public class CanvasController : MonoBehaviour
 
     public void StopAndResumeGame()
     {
+        
         if (Time.timeScale == 1)
         {
             
@@ -54,5 +55,10 @@ public class CanvasController : MonoBehaviour
         {
             hearth[i].SetActive(true);
         }
+    }
+
+    public void PlaySoundButton()
+    {
+        AudioManager.PlaySound(SoundType.MenuBotones, 1f);
     }
 }

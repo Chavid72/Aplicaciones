@@ -231,7 +231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5441667765653277961
 RectTransform:
   m_ObjectHideFlags: 0
@@ -319,7 +319,7 @@ RectTransform:
   m_GameObject: {fileID: 1560358069959324536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.41531107, y: 0.41531107, z: 0.41531107}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5441667765653277961}
@@ -397,40 +397,29 @@ MonoBehaviour:
   effectMixer: {fileID: 24100000, guid: dc4bf9171a81d0841afcebc668e11a1a, type: 2}
   ambientSlider: {fileID: 3410846885714801899}
   effectSlider: {fileID: 3112936526912146925}
-  background: {fileID: 8527864468531661066}
+  background: {fileID: 0}
   backgroundDark: {fileID: 21300000, guid: 9044218594469354e986c1d89c1dbb29, type: 3}
-  backgroundClear: {fileID: 21300000, guid: 96a8303ad669c334381c19c27de0af22, type: 3}
+  backgroundClear: {fileID: 21300000, guid: de5bfe36c4131794aaa8facc0e26f970, type: 3}
   buttonDark: {fileID: 21300000, guid: fe00f184d99ee3e418db68759182f5d4, type: 3}
   buttonClear: {fileID: 21300000, guid: 75221307a7d84bc4b9e3c18f797f7651, type: 3}
   buttons:
-  - {fileID: 5125095953501807025}
-  - {fileID: 8533642670503446482}
-  - {fileID: 2290213723641573357}
-  - {fileID: 5211629970762612112}
-  - {fileID: 1233218843195129121}
-  - {fileID: 282179332746529943}
-  - {fileID: 668502239074926298}
-  - {fileID: 7376989254752969533}
-  - {fileID: 8012575934364946953}
-  - {fileID: 7263414047031273693}
-  - {fileID: 4519006960120124854}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   buttonsTexts:
-  - {fileID: 1727629653535940788}
-  - {fileID: 2030306218026145762}
-  - {fileID: 2715723532847074694}
-  - {fileID: 7370326224361673618}
-  - {fileID: 1588723141012985419}
-  - {fileID: 2046207307254655888}
-  - {fileID: 6529502750571864919}
-  - {fileID: 6587759203752213951}
-  - {fileID: 8665087154500872993}
-  - {fileID: 7001290398349209748}
-  - {fileID: 8718445336077118081}
-  - {fileID: 1348870852269579583}
-  - {fileID: 3687023139059933212}
-  - {fileID: 6387879007423729992}
-  - {fileID: 6764249378305564085}
-  - {fileID: 2619957077003993095}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &8994699938223112716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2104,7 +2093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3561852567746988590
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2376,6 +2365,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 7934062691792080906}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: PlaySoundButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &3736095610998740126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2600,6 +2601,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7934062691792080906}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: PlaySoundButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2916,7 +2929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1065253493347794701
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3386,6 +3399,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7934062691792080906}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: PlaySoundButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5676600884309128809
 GameObject:
   m_ObjectHideFlags: 0
@@ -3754,6 +3779,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7934062691792080906}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: PlaySoundButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6386032008015722735
 GameObject:
   m_ObjectHideFlags: 0
@@ -4064,6 +4101,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7934062691792080906}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: PlaySoundButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6708182569772059127
 GameObject:
   m_ObjectHideFlags: 0
@@ -4213,6 +4262,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7934062691792080906}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: PlaySoundButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4721,6 +4782,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7934062691792080906}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: PlaySoundButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5513,6 +5586,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7934062691792080906}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: PlaySoundButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8850332062571012245
 GameObject:
   m_ObjectHideFlags: 0
@@ -5639,6 +5724,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Options, Assembly-CSharp
         m_MethodName: setLanguage
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7934062691792080906}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: PlaySoundButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5809,6 +5906,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Options, Assembly-CSharp
         m_MethodName: setMode
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7934062691792080906}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: PlaySoundButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

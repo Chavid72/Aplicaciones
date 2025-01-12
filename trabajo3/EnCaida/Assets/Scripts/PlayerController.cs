@@ -68,11 +68,13 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         if (shield) return;
+        AudioManager.PlaySound(SoundType.Golpe, 1f);
         health -= damage;
         Debug.Log("Player Health: " + health);
 
         if(health <= 0)
         {
+            AudioManager.PlaySound(SoundType.Muerte, 1f);
             PlayerPrefs.SetInt("Puntos", GameController.points); //Guarda en preferencias los puntos.
             SceneManager.LoadScene("LoseScene");
         }
