@@ -117,7 +117,7 @@ public class Options : MonoBehaviour
     public void setAmbientVolume(float volume)
     {
         PlayerPrefs.SetFloat("Ambient", volume);
-        effectMixer.SetFloat("VolumeAmbient", volume);
+        ambientMixer.SetFloat("VolumeAmbient", volume);
     }
 
     public void setMode(int i)
