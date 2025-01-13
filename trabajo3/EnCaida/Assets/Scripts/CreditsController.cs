@@ -8,8 +8,8 @@ public class CreditsController : MonoBehaviour
     public string CrisWeb = "https://cristinamartinez24.github.io/";
     public string DavidWeb = "";
     public string SergioWeb = "";
-    public string LuisWeb = "";
-    public string LolaWeb = "";
+    public string LuisWeb = "https://www.instagram.com/lsui_23/";
+    public string LolaWeb = "https://www.instagram.com/solum.studios/";
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +30,18 @@ public class CreditsController : MonoBehaviour
     {
         PlayButtonSound();
         Application.OpenURL(CrisWeb);
+    }
+
+    public void OpenLolaWeb()
+    {
+        PlayButtonSound();
+        Application.OpenURL(LolaWeb);
+    }
+
+    public void OpenLuisWeb()
+    {
+        PlayButtonSound();
+        Application.OpenURL(LuisWeb);
     }
 
     public void PlayButtonSound()

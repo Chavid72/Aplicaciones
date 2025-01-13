@@ -1724,8 +1724,8 @@ MonoBehaviour:
   CrisWeb: https://cristinamartinez24.github.io/
   DavidWeb: 
   SergioWeb: 
-  LuisWeb: 
-  LolaWeb: 
+  LuisWeb: https://www.instagram.com/lsui_23/
+  LolaWeb: https://www.instagram.com/solum.studios/
 --- !u!1 &464334141
 GameObject:
   m_ObjectHideFlags: 0
@@ -2609,7 +2609,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 626568300}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 428954611}
+        m_TargetAssemblyTypeName: CreditsController, Assembly-CSharp
+        m_MethodName: OpenLuisWeb
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &626568300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4467,7 +4479,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1479089074}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 428954611}
+        m_TargetAssemblyTypeName: CreditsController, Assembly-CSharp
+        m_MethodName: OpenLolaWeb
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1479089074
 MonoBehaviour:
   m_ObjectHideFlags: 0
