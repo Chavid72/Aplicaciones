@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "46deccf8",
     "m_SelectedProcess": {
-        "deviceId": "46deccf8",
-        "name": "com.Unknova.FallOff",
-        "processId": 26318,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -17,145 +17,31 @@
         {
             "deviceId": "46deccf8",
             "name": "com.Unknova.FallOff",
-            "processId": 15974,
-            "exited": true
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 15435,
-            "exited": true
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 18115,
-            "exited": true
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 22174,
-            "exited": true
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 24954,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 9466,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 16773,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 24147,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 30372,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 785,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 3616,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 6863,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 14141,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 16223,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 20783,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 25550,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 11733,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 14706,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 16537,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 14779,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
-            "processId": 17064,
-            "exited": false
-        },
-        {
-            "deviceId": "46deccf8",
-            "name": "com.Unknova.FallOff",
             "processId": 18946,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "46deccf8",
             "name": "com.Unknova.FallOff",
             "processId": 21834,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "46deccf8",
             "name": "com.Unknova.FallOff",
             "processId": 26318,
+            "exited": true
+        },
+        {
+            "deviceId": "46deccf8",
+            "name": "com.Unknova.FallOff",
+            "processId": 9500,
+            "exited": true
+        },
+        {
+            "deviceId": "46deccf8",
+            "name": "com.Unknova.FallOff",
+            "processId": 12442,
             "exited": false
         }
     ],
