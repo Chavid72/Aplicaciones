@@ -1083,6 +1083,9 @@ MonoBehaviour:
   - name: PowerUp
     sounds:
     - {fileID: 8300000, guid: 53ffe8c240b9c6e4ca92c032f791b354, type: 3}
+  - name: Wind
+    sounds:
+    - {fileID: 8300000, guid: 092ad747edb11de45a297f56d23d98a7, type: 3}
   audioSource: {fileID: 854238697}
 --- !u!82 &854238697
 AudioSource:

@@ -108,6 +108,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void StartWind(float w)
+    {
+        StartCoroutine(WindC(w));
+    }
+
     IEnumerator BlinkRed()
     {
         for (int i = 0; i < blinkCount; i++)
@@ -131,5 +136,37 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(waitShield);
         spriteRenderer.color = originalColor;
         shield = false;
+    }
+
+    IEnumerator WindC(float w)
+    {
+        yield return new WaitForSeconds(0.5f);
+        for (int i = 0; i < 3; i++)
+        {
+            wind += w / 3;
+            yield return new WaitForSeconds(1f);
+        }
+
+        yield return new WaitForSeconds(3.5f);
+
+        for (int i = 0; i < 3; i++)
+        {
+            wind -= w / 3;
+            yield return new WaitForSeconds(1f);
+        }
+
+        wind = 0;
+        GameController.Instance.wind = false;
+
+        if (GameController.Instance.windLeft.activeSelf == true)
+        {
+            GameController.Instance.windLeft.SetActive(false);
+        }
+
+        if (GameController.Instance.windRight.activeSelf == true)
+        {
+            GameController.Instance.windRight.SetActive(false);
+        }
+        
     }
 }

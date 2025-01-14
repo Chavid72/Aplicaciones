@@ -12,7 +12,8 @@ public enum SoundType
     Golpe,
     MenuBotones,
     Muerte,
-    PowerUp
+    PowerUp,
+    Wind
 }
 
 [RequireComponent(typeof(AudioSource)), ExecuteInEditMode]

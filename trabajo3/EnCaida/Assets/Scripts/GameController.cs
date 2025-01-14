@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
     public int pointMultiplier = 1;
     [SerializeField]private int waitMultiplier = 10;
     [SerializeField]private int waitWind = 10;
+    [SerializeField] public GameObject windRight;
+    [SerializeField] public GameObject windLeft;
     private Coroutine MultiplierC;
     private float time = 0;
     public float windProb = 0;
@@ -53,17 +55,21 @@ public class GameController : MonoBehaviour
                 float windSpeed;
                 if (dir == 0)
                 {
+                    windLeft.SetActive(true);
                     windSpeed = UnityEngine.Random.Range(-0.2f, -0.05f);
                 }
                 else
                 {
+                    windRight.SetActive(true);
                     windSpeed = UnityEngine.Random.Range(0.05f, 0.2f);
                 }
 
-                PlayerController.Instance.wind = windSpeed;
+                //PlayerController.Instance.wind = windSpeed;
                 windProb = 0;
                 wind = true;
-                StartCoroutine(WindEvent());
+                AudioManager.PlaySound(SoundType.Wind, 0.5f);
+                PlayerController.Instance.StartWind(windSpeed);
+                //StartCoroutine(WindEvent());
             }
 
             else
