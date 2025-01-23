@@ -43,24 +43,33 @@ public class LoseSceneController : MonoBehaviour
         if (playerData.TryGetValue("MejorPuntaje0", out var firstKey))
         {
             Debug.Log($"firstKeyName value: {firstKey.Value.GetAs<int>()}");
-            data["MejorPuntaje0"] = firstKey.Value.GetAs<int>();
+
+            if (data.ContainsKey("MejorPuntaje0")) { data["MejorPuntaje0"] = firstKey.Value.GetAs<int>(); }
+            else { data.Add("MejorPuntaje0", firstKey.Value.GetAs<int>()); }
+
             mejoresPuntajes[0] = firstKey.Value.GetAs<int>();
         }
 
         if (playerData.TryGetValue("MejorPuntaje1", out var secondKey))
         {
             Debug.Log($"secondKey value: {secondKey.Value.GetAs<int>()}");
-            data["MejorPuntaje1"] = secondKey.Value.GetAs<int>();
+
+            if (data.ContainsKey("MejorPuntaje1")) { data["MejorPuntaje1"] = secondKey.Value.GetAs<int>(); }
+            else { data.Add("MejorPuntaje1", secondKey.Value.GetAs<int>()); }
+
             mejoresPuntajes[1] = secondKey.Value.GetAs<int>();
         }
 
         if (playerData.TryGetValue("MejorPuntaje2", out var thirdKey))
         {
             Debug.Log($"thirdKey value: {thirdKey.Value.GetAs<int>()}");
-            data["MejorPuntaje2"] = thirdKey.Value.GetAs<int>();
+
+            if (data.ContainsKey("MejorPuntaje2")) { data["MejorPuntaje2"] = thirdKey.Value.GetAs<int>(); }
+            else { data.Add("MejorPuntaje2", thirdKey.Value.GetAs<int>()); }
+
             mejoresPuntajes[2] = thirdKey.Value.GetAs<int>();
         }
-        debug_text.text = "" + data["MejorPuntaje0"] + " array " + mejoresPuntajes[0];
+        //debug_text.text = "" + data["MejorPuntaje0"] + " array " + mejoresPuntajes[0];
 
         // Comparar el nuevo puntaje con los mejores.
         for (int i = 0; i < 3; i++)
